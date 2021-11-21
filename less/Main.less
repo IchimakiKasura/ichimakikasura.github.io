@@ -13,18 +13,22 @@ body {
     font-family: "UD Digi Kyokasho N-R";
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 .navbar {
     @media screen and (max-width: 1400px){
         position: fixed;
-        top: 0;
+        top: -110px;
         margin: 0px;
         padding: 0;
         border-radius: 0;
         width: 100%;
     }
-    // margin-right: 200px
-    position: sticky;
-    top: 20px;
+
+    position: relative;
+    top: -150px;
     margin: auto;
     padding: 20px;
     width: 50%;
@@ -35,6 +39,7 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 10px 1px black;
+    transition: top 1s;
 
     img
     {
