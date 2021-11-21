@@ -28,6 +28,8 @@
     <meta name="twitter:image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
 
     <style>
+        * { margin: 0; padding: 0; }
+
         .preLoad {
             z-index: 1;
             position: fixed;
@@ -35,6 +37,27 @@
             background: wheat;
             height: 100%;
             width: 100%;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s;
+        }
+
+        h1 {
+            font-family: "UD Digi Kyokasho N-R";
+            animation: loading .8s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                font-size: 50px;
+            }
+            50% {
+                font-size: 100px;
+            }
+            100% {
+                font-size: 50;
+            }
         }
     </style>
 
@@ -43,7 +66,7 @@
 <body>
 
     <div class="preLoad">
-
+        <h1>Loading</h1>
     </div>
 
     <div class="navbar">
@@ -81,6 +104,9 @@
         <p>
             Created and Designed by Ichimaki Kasura.
         </p>
+        <div>
+            <img src="https://www.freeiconspng.com/uploads/github-logo-icon-5.png" alt="Github">
+        </div>
     </div>
 
 </body>
