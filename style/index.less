@@ -1,0 +1,139 @@
+.nav{
+    z-index: 1;
+    position: fixed;
+    background-color: var(--bg-nav);
+    box-shadow: 0 0 10px 1px black;
+    display: flex;
+    padding-left: 6px;
+    padding-top: 0.7vh;
+    padding-bottom: 0.6vh;
+    align-items: center;
+    width: 100%;
+    height: clamp(3%, 6%, 10%);
+    
+    img {
+        height: 100%;
+        margin-right: 1vw;
+    }
+
+    .nav-button {
+        text-decoration: none;
+        color: black;
+        font-size: 3vh;
+        font-weight:lighter;
+        border-radius: 5px;
+        padding: 1.5vh;
+        padding-left: 6vh;
+        padding-right: 6vh;
+        margin-left: 0.1vw;
+        margin-right: 0.1vw;
+
+        transition: background-color 0.1s;
+    }
+
+    .nav-button:hover
+    {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+section {
+    overflow: hidden;
+    padding-top: 8vh;
+    height: 92vh;
+}
+
+#main {
+    overflow: hidden;
+
+    [Paragraphs] {
+        position: relative;
+        top: 20vh;
+        left: 10vw;
+        width: 45vw;
+    }
+
+    [Paragraph-Intro] {
+        position: inherit;
+        left:20px;
+        font-size: 25px;
+    }
+    [Paragraph-Name] {
+        position: inherit;
+        left:20px;
+        font-size: 65px;
+    }
+    [Paragraph-Etc] {
+        position: inherit;
+        left:20px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    
+    img {
+        z-index: -1;
+        opacity: 0.5;
+        position: relative;
+        float: right;
+        right: -100px;
+        bottom: 50px;
+        height: 100vh;
+    }
+}
+
+#about {
+    background-color: var(--bg-about);
+    img {
+        position: relative;
+        opacity: 0.5;
+        bottom: -10vh;
+        height: 80vh;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+}
+
+#project {
+    background-color: var(--bg-projects);
+    img {
+        opacity: 0.5;
+        position: relative;
+        float: right;
+        bottom: -10vh;
+        height: 70vh;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+}
+
+#contact {
+    background-color: var(--bg-contacts);
+    img {
+        position: relative;
+        opacity: 0.5;
+        height: 40vh;
+        bottom: -38vh;
+    }
+}
+
+header {
+    font-size: 100px;
+}
+
+.footer {
+    text-align: center;
+    height: 50px;
+    padding-top: 30px;
+    box-shadow: 0 4px 10px black inset;
+    background-color: #3e4649;
+    font-size: 20px;
+
+    a {
+        text-decoration: none;
+        color: pink;
+    }
+}

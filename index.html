@@ -1,12 +1,13 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="less/css.css">
-    <link rel="stylesheet/less" href="less/Main.less" type="text/css" preload>
-    <link rel="stylesheet/less" href="less/index.less" type="text/css" preload>
+    
+    <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet/less" href="style/Main.less" type="text/css" preload>
+    <link rel="stylesheet/less" href="style/index.less" type="text/css" preload>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/80595346?v=4?" type="image/x-icon">
 
     <!-- main -->
@@ -32,56 +33,81 @@
     <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
 
     <!-- fuck jQuery, I'll use my homemade jQuery -->
-    <script src="https://cdn.jsdelivr.net/gh/IchimakiKasura/IchimakiKasura@main/kasu%402.0.min.js"></script>
+    <script src="js/kasu-beta-2.0.oc.mini.js"></script>
+    <script src="js/preload.js"></script>
 
     <title>Ichimaki Kasura</title>
 </head>
 <body>
-
     <div class="preLoad">
         <h1>Loading</h1>
     </div>
 
-    <div class="navbar">
-        <img src="https://avatars.githubusercontent.com/u/80595346?v=4?">
-        <div class="nav-btn">
-            <span id="about">About</span>
-            <span id="featured">Featured</span>
-            <span id="contacts">Contact</span>
-        </div>
+    <div class="nav">
+        <img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/img/Profile%20Picture.png"
+        alt="Main Picture"
+        loading="lazy"
+        onclick="location.href = 'index.html#main'; int=0"
+        style="cursor: pointer;"
+        title="Home"/>
+        <a class="nav-button" href="#about" title="About" onclick="int=1">About</a>
+        <a class="nav-button" href="#project" title="projects" onclick="int=2">Projects</a>
+        <a class="nav-button" href="#contact" title="Contacts" onclick="int=3">Contact</a>
     </div>
 
+    <!-- Content -->
     <div class="content">
 
-        <!-- Intro -->
-        <section class="intro">
-        </section>
+        <div id="main">
+            <section>
+                <div Paragraphs>
+                    <p Paragraph-Intro>Hello! I'm</p>
+                    <h Paragraph-Name>Ichimaki Kasura</h1>
+                    <p Paragraph-Etc>A curious developer who still calls himself a "junior dev"</p>
+                </div>
+                <img src="images/astolfo.png" alt="astolfo">
+            </section>
+        </div>
 
-        <!-- About me -->
-        <section class="intro-about">
+        <div id="about">
+            <section>
+                <header>
+                    About
+                </header>
+                <p>
+                    
+                </p>
+                <img src="images/hutao.png" alt="hutao">
+            </section>
+        </div>
 
-        </section>
+        <div id="project">
+            <section>
+                <header>
+                    Projects
+                </header>
+                <p>
+                    
+                </p>
+                <img src="images/akira.png" alt="akira">
+            </section>
+        </div>
 
-        <!-- projects -->
-        <section class="project-work">
-
-        </section>
-
-        <section class="contact">
-
-        </section>
-
-    </div>
-
-    <div class="footer">
-        <p>
-            Created and Designed by Ichimaki Kasura.
-        </p>
-        <div>
-            <img src="https://www.freeiconspng.com/uploads/github-logo-icon-5.png" alt="Github">
+        <div id="contact">
+            <section>
+                <header>
+                    Contacts
+                </header>
+                <p>
+                    
+                </p>
+                <img src="images/venti.png" alt="venti">
+            </section>
+        </div>
+        
+        <div id="footer" class="footer">
+            <p>Designed by <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a></p>
         </div>
     </div>
-
 </body>
-<script src="js/main.js"></script>
 </html>
