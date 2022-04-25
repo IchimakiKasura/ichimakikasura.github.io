@@ -48,7 +48,7 @@ var WebScroll = function(e){
 
     setTimeout(()=>{
         addEventListener('wheel', WebScroll, false);
-    }, 800);
+    }, 1000);
 };
 
 addEventListener('wheel', WebScroll, false);
