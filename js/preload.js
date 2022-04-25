@@ -34,14 +34,14 @@ var WebScroll = function(e){
         // scroll down
         if(int >= 4) return;
         int++;
-        location.href = `index.html#${sections[int]}`
+        location.href = `#${sections[int]}`
         
     } else {
         
         //scroll up
         if(int == 0) return;
         int--;
-        location.href = `index.html#${sections[int]}`
+        location.href = `#${sections[int]}`
 
     }
     removeEventListener('wheel', WebScroll, false);
