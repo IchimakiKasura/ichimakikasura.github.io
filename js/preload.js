@@ -47,9 +47,8 @@ var WebScroll = function(e){
     removeEventListener('wheel', WebScroll, false);
 
     setTimeout(()=>{
-        console.log(int)
         addEventListener('wheel', WebScroll, false);
-    }, 500);
+    }, 800);
 };
 
 addEventListener('wheel', WebScroll, false);
