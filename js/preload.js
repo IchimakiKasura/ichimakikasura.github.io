@@ -1,6 +1,6 @@
 "use strict";
 
-const sections = ["main", "about", "project", "contact", "footer"];
+const sections = ["main", "about", "projects", "contact", "footer"];
 let int = 0;
 
 (function(){
@@ -9,28 +9,36 @@ let int = 0;
     {
         case "main": return int = 0;
         case "about": return int = 1;
-        case "project": return int = 2;
+        case "projects": return int = 2;
         case "contact": return int = 3;
         case "footer": return int = 4;
     }
 })();
 
 window.onload = ()=>{
-    let preload = setTimeout(()=>{
+    setTimeout(()=>{
         か(".preLoad").sty("opacity", 0);
+        か(".nav").sty("top", "0");
     }, 1000)
-
-    let preloadTwo = setTimeout(()=>{
+    
+    setTimeout(()=>{
         か(".preLoad").sty("display", "none");
+        か("[ScrollArrow]").sty("display", "block");
     }, 1350)
 
+    setTimeout(()=>{
+        か("[ScrollArrow]").sty("display", "block");
+    }, 3000)
 };
 
 var WebScroll = function(e){
     
+    var ctxMenu = か(".vertical-menu").gt;
+    ctxMenu.style.visibility = "hidden";
+    ctxMenu.style.opacity = 0;
+
     if(e.wheelDelta < 0)
     {
-
         // scroll down
         if(int >= 4) return;
         int++;
@@ -48,7 +56,7 @@ var WebScroll = function(e){
 
     setTimeout(()=>{
         addEventListener('wheel', WebScroll, false);
-    }, 1000);
+    }, 950);
 };
 
 addEventListener('wheel', WebScroll, false);

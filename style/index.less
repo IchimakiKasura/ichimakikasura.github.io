@@ -2,7 +2,7 @@
     z-index: 1;
     position: fixed;
     background-color: var(--bg-nav);
-    box-shadow: 0 0 10px 1px black;
+    box-shadow: 0 0 1vh 0.1vh black;
     display: flex;
     padding-left: 6px;
     padding-top: 0.7vh;
@@ -10,8 +10,11 @@
     align-items: center;
     width: 100%;
     height: clamp(3%, 6%, 10%);
+    top: -70px;
+    transition: top 1s;
     
     img {
+        z-index: 2;
         height: 100%;
         margin-right: 1vw;
     }
@@ -31,8 +34,14 @@
         transition: background-color 0.1s;
     }
 
-    .nav-button:hover
-    {
+    div {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-button:hover {
         background-color: rgba(0, 0, 0, 0.2);
     }
 }
@@ -40,6 +49,8 @@
 section {
     overflow: hidden;
     padding-top: 8vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
     height: 92vh;
 }
 
@@ -87,6 +98,7 @@ section {
         position: relative;
         opacity: 0.5;
         bottom: -10vh;
+        right: 100px;
         height: 80vh;
         -moz-transform: scaleX(-1);
         -o-transform: scaleX(-1);
@@ -95,7 +107,7 @@ section {
     }
 }
 
-#project {
+#projects {
     background-color: var(--bg-projects);
     img {
         opacity: 0.5;

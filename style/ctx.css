@@ -1,0 +1,36 @@
+.vertical-menu {
+    background-color: var(--ctx-bg);
+    border-radius: 10px;
+    z-index: 100;
+    position: absolute;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 200px;
+    box-shadow: 0 0 10px 0.1px black;
+    transition: visibility 0.1s, opacity 0.1s;
+}
+
+.vertical-menu a {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    transition: background-color 0.1s;
+}
+
+.vertical-menu p {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: var(--ctx-hover-bg);
+}
+
+[menu-top] {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/ctx.css">
+    <link rel="stylesheet" href="style/scroll.css">
     <link rel="stylesheet/less" href="style/Main.less" type="text/css" preload>
     <link rel="stylesheet/less" href="style/index.less" type="text/css" preload>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/80595346?v=4?" type="image/x-icon">
@@ -13,20 +17,20 @@
     <!-- main -->
     <meta name="owner" content="IchimakiKasura"/>
     <meta name="title" content="Ichimaki Kasura | Portfolio"/>
-    <meta name="description" content="Hello My name is Ichimaki Kasura and I'm a somewhat junior developer." />
+    <meta name="description" content="Hello My name is Ichimaki Kasura and I do coding..." />
     <meta property="image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
     <!-- fb -->
-    <meta property="og:url" content="https://ichimakikasura.github.io/portfolio/"/>
+    <meta property="og:url" content="https://ichimakikasura.github.io/portfolio"/>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ichimaki Kasura | Portfolio" />
-    <meta property="og:description" content="Hello My name is Ichimaki Kasura and I'm a somewhat junior developer." />
+    <meta property="og:description" content="Hello My name is Ichimaki Kasura and I do coding..." />
     <meta property="og:image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
     <!-- twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@pkpit"/>
     <meta name="twitter:creator" content="IchimakiKasura"/>
     <meta name="twitter:title" content="Ichimaki Kasura | Portfolio" />
-    <meta name="twitter:description" content="Hello My name is Ichimaki Kasura and I'm a somewhat junior developer." />
+    <meta name="twitter:description" content="Hello My name is Ichimaki Kasura and I do coding..." />
     <meta name="twitter:image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
 
     <!-- less -->
@@ -39,9 +43,17 @@
     <title>Ichimaki Kasura</title>
 </head>
 <body>
-    <div class="preLoad">
+    <div class="preLoad" unselect>
         <h1>Loading</h1>
     </div>
+
+    <menu class="vertical-menu">
+        <a href="javascript:history.back()" menu-top>Back</a>
+        <a href="javascript:history.forward()">Forward</a>
+        <a href="">Reload</a>
+        <hr>
+        <p unselect>Created by Ichimaki</p>
+    </menu>
 
     <div class="nav">
         <img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/img/Profile%20Picture.png"
@@ -49,23 +61,32 @@
         loading="lazy"
         onclick="location.href = '#main'; int=0"
         style="cursor: pointer;"
-        title="Home"/>
-        <a class="nav-button" href="#about" title="About" onclick="int=1">About</a>
-        <a class="nav-button" href="#project" title="projects" onclick="int=2">Projects</a>
-        <a class="nav-button" href="#contact" title="Contacts" onclick="int=3">Contact</a>
+        title="Home"
+        unselect/>
+        <div>
+            <a class="nav-button" href="#about" title="About" onclick="int=1" unselect>About</a>
+            <a class="nav-button" href="#projects" title="projects" onclick="int=2" unselect>Projects</a>
+            <a class="nav-button" href="#contact" title="Contacts" onclick="int=3" unselect>Contact</a>
+        </div>
     </div>
 
     <!-- Content -->
     <div class="content">
-
         <div id="main">
             <section>
                 <div Paragraphs>
                     <p Paragraph-Intro>Hello! I'm</p>
                     <h Paragraph-Name>Ichimaki Kasura</h1>
-                    <p Paragraph-Etc>A curious developer who still calls himself a "junior dev"</p>
+                    <p Paragraph-Etc>A curious developer who still calls himself a “junior dev”</p>
                 </div>
-                <img src="images/astolfo.png" alt="astolfo">
+                <img src="images/astolfo.png" alt="astolfo" unselect>
+                <div class="arrow-container animated fadeInDown" style="display: none" ScrollArrow>
+                    <div class="arrow-2"
+                    onclick="location.href = '#about'; int=1">
+                      <i class="fa fa-angle-down"></i>
+                    </div>
+                    <div class="arrow-1 animated hinge infinite zoomIn"></div>
+                </div>
             </section>
         </div>
 
@@ -75,33 +96,33 @@
                     About
                 </header>
                 <p>
-                    
+                    So this is the about section thingy?
                 </p>
-                <img src="images/hutao.png" alt="hutao">
+                <img src="images/hutao.png" alt="hutao" unselect>
             </section>
         </div>
 
-        <div id="project">
+        <div id="projects">
             <section>
                 <header>
                     Projects
                 </header>
                 <p>
-                    
+                    So this is where my projects will display...
                 </p>
-                <img src="images/akira.png" alt="akira">
+                <img src="images/akira.png" alt="akira" unselect>
             </section>
         </div>
 
         <div id="contact">
             <section>
                 <header>
-                    Contacts
+                    Contact
                 </header>
                 <p>
-                    
+                    blah blah blah my contact information.
                 </p>
-                <img src="images/venti.png" alt="venti">
+                <img src="images/venti.png" alt="venti" unselect>
             </section>
         </div>
         
@@ -110,4 +131,5 @@
         </div>
     </div>
 </body>
+<script src="js/main.js"></script>
 </html>
