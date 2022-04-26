@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/scrollUp.css">
     <link rel="stylesheet" href="style/ctx.css">
     <link rel="stylesheet" href="style/scroll.css">
     <link rel="stylesheet/less" href="style/Main.less" type="text/css" preload>
@@ -27,7 +28,6 @@
     <meta property="og:image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
     <!-- twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@pkpit"/>
     <meta name="twitter:creator" content="IchimakiKasura"/>
     <meta name="twitter:title" content="Ichimaki Kasura | Portfolio" />
     <meta name="twitter:description" content="Hello My name is Ichimaki Kasura and I do coding..." />
@@ -51,35 +51,47 @@
         <a href="javascript:history.back()" menu-top>Back</a>
         <a href="javascript:history.forward()">Forward</a>
         <a href="">Reload</a>
+        <a href="javascript:nav_copy(this)" menu-copy>Copy</a>
         <hr>
         <p unselect>Created by Ichimaki</p>
     </menu>
 
+    <a id="button" href="#main" onclick="int=0"></a>
+
     <div class="nav">
-        <img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/img/Profile%20Picture.png"
-        alt="Main Picture"
-        loading="lazy"
-        onclick="location.href = '#main'; int=0"
-        style="cursor: pointer;"
-        title="Home"
-        unselect/>
-        <div>
+        <input type="checkbox" mobile-nav-menu>
+            <img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/img/Profile%20Picture.png"
+            alt="Main Picture"
+            loading="lazy"
+            style="cursor: pointer;"
+            title="Home"
+            unselect/>
+        </input>
+        <div nav-buttons>
             <a class="nav-button" href="#about" title="About" onclick="int=1" unselect>About</a>
             <a class="nav-button" href="#projects" title="projects" onclick="int=2" unselect>Projects</a>
             <a class="nav-button" href="#contact" title="Contacts" onclick="int=3" unselect>Contact</a>
+        </div>
+    </div>
+    
+    <div class="mobile-nav">
+        <div>
+            <button onclick="location.href='#about';removeNavMobile()">About</button>
+            <button onclick="location.href='#projects';removeNavMobile()">Projects</button>
+            <button onclick="location.href='#contact';removeNavMobile()">Contact</button>
         </div>
     </div>
 
     <!-- Content -->
     <div class="content">
         <div id="main">
-            <section>
+            <section ismousehovered>
                 <div Paragraphs>
                     <p Paragraph-Intro>Hello! I'm</p>
                     <h Paragraph-Name>Ichimaki Kasura</h1>
                     <p Paragraph-Etc>A curious developer who still calls himself a “junior dev”</p>
                 </div>
-                <img src="images/astolfo.png" alt="astolfo" unselect>
+                <img src="images/astolfo.png" alt="astolfo" unselect bg>
                 <div class="arrow-container animated fadeInDown" style="display: none" ScrollArrow>
                     <div class="arrow-2"
                     onclick="location.href = '#about'; int=1">
@@ -91,42 +103,65 @@
         </div>
 
         <div id="about">
-            <section>
-                <header>
-                    About
-                </header>
-                <p>
-                    So this is the about section thingy?
-                </p>
-                <img src="images/hutao.png" alt="hutao" unselect>
+            <section ismousehovered>
+                <div>
+                    <h1 style="padding-top:5vh; font-size: 10vh;">
+                        About me
+                    </h1>
+                    <h2 style="padding:1%; font-size: 2.5vh">
+                        The name is <a href="https://github.com/IchimakiKasura"style="color:red;text-decoration:none;">Ichimaki Kasura</a>, I like to code stuff and make stuff<br>
+                        that keeps me motivated to continue my hobby on being a developer.<br><br>
+                        Wanna be a Full-stack Developer, a Game Developer or Senior Programmer but it is rather impossible<br>
+                        since I am often being lazy most of the times<br>
+                        but in the end I'm just a junior programmer or even just an mediocre*.
+                    </h2>
+                    <h1 style="font-size: 8vh;padding-top:5vh;">Languages</h1>
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/nodejs-icon-logo-png-transparent.png"
+                    loading="lazy" style="width: 10vh" title="Node JS">   
+                    <img src="https://seeklogo.com/images/C/c-sharp-c-logo-02F17714BA-seeklogo.com.png"
+                    loading="lazy" style="width: 10vh" title="C# (dotnet)">   
+                    <img src="https://camo.githubusercontent.com/31e362bc613a4ce15d2295956a553073d280600ac3394d63eab7433161868d94/68747470733a2f2f6272616e64736c6f676f732e636f6d2f77702d636f6e74656e742f75706c6f6164732f696d616765732f6c617267652f6a6176617363726970742d6c6f676f2e706e67"
+                    loading="lazy"  style="width: 10vh" title="Javascript">
+                    <h5 style="padding-top:2vh;font-size:1.5vh">
+                        Other ones that I used but not really mastered or good with:
+                        <br>
+                        (some are not really a language)
+                    </h5>
+                    <img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" style="width: 5vh" title="Hyper Text Markup Language"> 
+                    <img src="https://cdn.freebiesupply.com/logos/large/2x/php-1-logo-png-transparent.png" style="width: 10vh" title="HyperText Preprocessor"> 
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png" style="width:4vh" title="Java"> 
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 5vh" title="Python">
+                    <img src="https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.png" style="width: 10vh" title="MySQL">
+                </div>
+                <img src="images/hutao.png" alt="hutao" unselect bg>
             </section>
         </div>
 
         <div id="projects">
-            <section>
+            <section ismousehovered>
                 <header>
                     Projects
                 </header>
                 <p>
                     So this is where my projects will display...
                 </p>
-                <img src="images/akira.png" alt="akira" unselect>
+                <img src="images/akira.png" alt="akira" unselect bg>
             </section>
         </div>
 
         <div id="contact">
-            <section>
+            <section ismousehovered>
                 <header>
                     Contact
                 </header>
                 <p>
                     blah blah blah my contact information.
                 </p>
-                <img src="images/venti.png" alt="venti" unselect>
+                <img src="images/venti.png" alt="venti" unselect bg>
             </section>
         </div>
         
-        <div id="footer" class="footer">
+        <div id="footer" class="footer" ismousehovered>
             <p>Designed by <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a></p>
         </div>
     </div>
