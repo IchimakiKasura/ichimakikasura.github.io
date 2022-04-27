@@ -13,6 +13,7 @@
     --bg-contacts: #3fc2c280;
     --ctx-bg: #b67c7c;
     --ctx-hover-bg: #8d5c5c;
+    --ctx-hr: #613e3e;
     /* --ctx-bg: #a66a6a; */
     /* --ctx-bg: #606390; */
     /* --ctx-bg: #468282; */
@@ -22,7 +23,7 @@
 
 }
 
-body { background-color: var(--bg-color); overflow: hidden;}
+body { background-color: var(--bg-color); overflow:hidden;}
 
 .preLoad {
     z-index: 2;

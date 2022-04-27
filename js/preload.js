@@ -2,9 +2,6 @@
 
 const sections = ["main", "about", "projects", "contact", "footer"];
 let int = 0;
-let CanScroll = true;
-let isMouseHover = false;
-let isKeyDown = false;
 
 (function () {
     let section = location.hash.replace("#", "");
@@ -37,55 +34,3 @@ window.onload = () => {
 
 
 };
-
-// #region web scroll thing
-か(window).scroll(() => {
-    if (か.isMobile) location.hash = null;
-    if (window.pageYOffset > 300) {
-        btn.classList.add("show");
-    } else {
-        btn.classList.remove("show");
-    }
-})
-
-か(document).evt('wheel', (e) => {
-
-    // console.table({"mouse": isMouseHover,"scroll": CanScroll,"key": isKeyDown})
-    if (か.isMobile) return;
-    if (!isMouseHover) return;
-    if (!CanScroll) return;
-    if (isKeyDown) return;
-
-    var ctxMenu = か(".vertical-menu").gt;
-    ctxMenu.style.visibility = "hidden";
-    ctxMenu.style.opacity = 0;
-
-    if (e.wheelDelta < 0) {
-        // scroll down
-        scrollDownPage();
-        CanScroll = false;
-    } else {
-
-        //scroll up
-        scrollUpPage();
-        CanScroll = false;
-    }
-
-    setTimeout(() => {
-        CanScroll = true;
-    }, 700);
-
-});
-//#endregion
-
-function scrollDownPage() {
-    if (int >= 4) return;
-    int++;
-    location.href = `#${sections[int]}`
-}
-
-function scrollUpPage() {
-    if (int == 0) return;
-    int--;
-    location.href = `#${sections[int]}`
-}
