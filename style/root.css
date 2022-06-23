@@ -1,8 +1,14 @@
+@font-face {
+    font-family: 'DefaultFont';
+    src:  url("../font/UDDigiKyokashoN-R.ttc") format('truetype');
+}
+
 * {
     margin: 0;
-    font-family: "UD Digi Kyokasho N-R";
+    font-family: 'DefaultFont';
     scroll-behavior: smooth;
 }
+
 
 :root {
     --bg-color: #ffacac;
@@ -39,7 +45,7 @@ body { background-color: var(--bg-color); overflow:hidden;}
 }
 
 .preLoad h1 {
-    font-family: "UD Digi Kyokasho N-R";
+    font-family: "DefaultFont";
     animation: loading 1s infinite;
 }
 

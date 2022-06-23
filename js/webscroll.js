@@ -16,6 +16,9 @@ sectionMouseOver.forEach(element => {
     }
 })
 
+// I CAN'T, HOW DID THEY DO IT?
+// https://www.toweroffantasy-global.com/
+// I don't want to copy straight up I want to code it from scratch, fuck
 // web scroll
 か(document).evt('wheel', (e) => {
 

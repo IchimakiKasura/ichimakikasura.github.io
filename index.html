@@ -62,8 +62,9 @@
 
     <div class="nav">
         <input type="checkbox" mobile-nav-menu>
-        <img src="https://raw.githubusercontent.com/IchimakiKasura/IchimakiKasura/main/img/Profile%20Picture.png"
-            alt="Main Picture" loading="lazy" style="cursor: pointer;" title="Home" unselect />
+        <img src="https://avatars.githubusercontent.com/u/80595346?v=4?"
+            alt="Main Picture" loading="lazy" style="cursor: pointer;border-radius: 360%;box-shadow: 0 0 10px 2px black;"
+            title="Visit my Github" unselect />
         </input>
         <div nav-buttons>
             <a class="nav-button" href="#about" title="About" onclick="int=1" unselect>About</a>
@@ -78,6 +79,11 @@
             <button onclick="location.href='#projects';removeNavMobile()">Projects</button>
             <button onclick="location.href='#contact';removeNavMobile()">Contact</button>
         </div>
+        <br>
+        <h2 style="text-align: center;">
+            Mobile Support isn't really fully supported yet.<br>
+            Because I suck at CSS.
+        </h2>
     </div>
 
     <!-- Content -->
@@ -87,7 +93,7 @@
                 <div Paragraphs>
                     <p Paragraph-Intro>Hello! I'm</p>
                     <h1 Paragraph-Name>Ichimaki Kasura</h1>
-                    <p Paragraph-Etc>A curious developer who still calls himself a “junior dev”</p>
+                    <p Paragraph-Etc>A curious developer who still wandering on which language to master.</p>
                     <br>
                     (website currently w.i.p)
                 </div>
@@ -102,8 +108,8 @@
         </div>
 
         <div id="about">
-            <section ismousehovered>
-                <div>
+            <section ismousehovered style="position: relative;">
+                <div aboutDiv>
                     <h1 style="padding-top:5vh; font-size: 10vh;">
                         About me
                     </h1>
@@ -115,9 +121,11 @@
                         Wanna be a Full-stack Developer, a Game Developer or Senior Programmer but it is rather
                         impossible<br>
                         since I am often being lazy most of the times<br>
-                        but in the end I'm just a junior programmer or even just an mediocre*.
+                        but in the end I'm just a junior programmer or even just an mediocre*.<br>
+                        And nope not being too humble I'm just being straightforward<br>
+                        because I'm that guy who still questions my own skills.
                     </h2>
-                    <h1 style="font-size: 8vh;padding-top:5vh;">Languages</h1>
+                    <h1 style="font-size: 8vh;padding-top:5vh;" lng>Languages</h1>
                     <img src="https://cdn.freebiesupply.com/logos/large/2x/nodejs-icon-logo-png-transparent.png"
                         loading="lazy" style="width: 10vh" title="Node JS">   
                     <img src="https://seeklogo.com/images/C/c-sharp-c-logo-02F17714BA-seeklogo.com.png" loading="lazy"
@@ -157,13 +165,17 @@
         </div>
 
         <div id="contact">
-            <section ismousehovered>
+            <section ismousehovered ctn>
                 <h1 style="padding-top:2vh; font-size: 10vh;">
                     📬Contact
                 </h1>
                 <h2 style="padding-left:20vh;padding-top:5vh;font-size: 5vh;">
                     Get in touch?
                 </h2>
+                <p style="padding: 5vh;font-size:3vh;padding-left:25vh;">
+                    Email:&nbsp;&nbsp;&nbsp;<a href="mailto:IchimakiKasura@gmail.com">IchimakiKasura@gmail.com</a><br>
+                    Discord: <a href="https://discord.com/users/716593062217908274">Ichimaki#7773</a>
+                </p>
                 <img src="images/venti.png" alt="venti" unselect bg>
             </section>
         </div>

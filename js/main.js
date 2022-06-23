@@ -27,7 +27,7 @@ CopyButton.evt("mouseleave", () => {
 })
 //#endregion
 
-か("[title='Home']").evt("click", () => open("https://github.com/IchimakiKasura"));
+か("[title='Visit my Github']").evt("click", () => open("https://github.com/IchimakiKasura"));
 
 か("[mobile-nav-menu]").evt("change", (e) => {
     if (e.target.checked) {
@@ -38,7 +38,10 @@ CopyButton.evt("mouseleave", () => {
     か(".mobile-nav").sty("top", "-250rem");
 });
 
-か(window).resize(() => location.href = location.hash);
+か(window).resize(() => {
+    if(location.hash)
+        location.href = location.hash
+});
 
 か(window).evt("visibilitychange", () => {
     if (document.visibilityState == "visible")
