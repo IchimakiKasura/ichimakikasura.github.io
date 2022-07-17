@@ -24,7 +24,7 @@ function MobileSwitch()
     let contact = "[ctn]"
     let Adiv = "[aboutDiv]"
 
-    か("body").gt.style.overflowY = "visible";
+    // か("body").gt.style.overflowY = "visible";
 
     // Main
     か("[Paragraphs]").gt.style.top = "10vh";

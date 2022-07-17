@@ -19,38 +19,39 @@ sectionMouseOver.forEach(element => {
 // I CAN'T, HOW DID THEY DO IT?
 // https://www.toweroffantasy-global.com/
 // I don't want to copy straight up I want to code it from scratch, fuck
+// EDIT: i cant its buggy
 // web scroll
-か(document).evt('wheel', (e) => {
+// か(document).evt('wheel', (e) => {
 
-    // console.table({"mouse": isMouseHover,"scroll": CanScroll,"key": isKeyDown})
-    if (か.isMobile) return;
-    if (!CanScroll) return;
-    if (!isMouseHover) return;
-    if (isKeyDown) return;
+//     // console.table({"mouse": isMouseHover,"scroll": CanScroll,"key": isKeyDown})
+//     if (か.isMobile) return;
+//     if (!CanScroll) return;
+//     if (!isMouseHover) return;
+//     if (isKeyDown) return;
 
 
-    var ctxMenu = か(".vertical-menu").gt;
-    ctxMenu.style.visibility = "hidden";
-    ctxMenu.style.opacity = 0;
+//     var ctxMenu = か(".vertical-menu").gt;
+//     ctxMenu.style.visibility = "hidden";
+//     ctxMenu.style.opacity = 0;
 
-    if (e.wheelDelta < 0) {
+//     if (e.wheelDelta < 0) {
 
-        // scroll down
-        if (int >= 4) return;
-        int++;
-        location.href = `#${sections[int]}`
-        CanScroll = false;
-    } else {
+//         // scroll down
+//         if (int >= 4) return;
+//         int++;
+//         location.href = `#${sections[int]}`
+//         CanScroll = false;
+//     } else {
 
-        //scroll up
-        if (int == 0) return;
-        int--;
-        location.href = `#${sections[int]}`
-        CanScroll = false;
-    }
+//         //scroll up
+//         if (int == 0) return;
+//         int--;
+//         location.href = `#${sections[int]}`
+//         CanScroll = false;
+//     }
 
-    setTimeout(() => {
-        CanScroll = true;
-    }, 700);
+//     setTimeout(() => {
+//         CanScroll = true;
+//     }, 700);
 
-});
+// });
