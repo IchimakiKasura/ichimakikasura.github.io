@@ -84,8 +84,9 @@ body {
 {
     text-align: center;
     padding-top: 35px;
-    height: 105px;
+    height: auto;
 }
+
 [skills] img
 {
     position: relative;
