@@ -30,7 +30,6 @@ body {
     overflow-x: hidden;
 }
 
-
 [unselect] {
     user-select: none;
     -moz-user-select: none;
@@ -46,75 +45,98 @@ body {
     height: 175px;
 }
 
+/* #region Main*/
 [main]
 {
     background-color: var(--bg-nav);
-    position: relative;
-    
-    z-index: 2;
-
-    height: auto;
-    width: auto;
-
-    padding: 50px;
-
     border-radius: 0.5rem;
-
     box-shadow: 0 0px 20px black;
+    position: relative;
+    height: auto;
+    padding: 50px;
+    width: auto;
+    z-index: 2;
 }
 [submain]
 {
-    z-index: 5;
     display: inline-flex;
+    z-index: 5;
 }
+/* #endregion */
 
+/* #region Submain section */
 [socials]
 {
-    padding-top: 30px;
     text-align: center;
+    padding-top: 30px;
 }
 
 [introduction]
 {
-    padding-top: 10px;
     padding-left: 35px;
+    padding-top: 10px;
 }
 
+/* #region Skills */
 [skills]
 {
+    height: auto;
     text-align: center;
     padding-top: 35px;
-    height: auto;
 }
-
 [skills] img
 {
-    position: relative;
     -webkit-filter: drop-shadow(0px 0px 5px black);
     filter: drop-shadow(0px 0px 5px black);
-    transition: all 0.2s;
     height: 50px;
+    transition: all 0.2s;
+    position: relative;
 }
-
 [skills] img:hover
 {
     height: 70px;
     margin-top: -2%;
 }
+/* #endregion */
 
+/* #region Socials */
 [socials] img
 {
-    padding-right: 10px;
     -webkit-filter: drop-shadow(0px 0px 5px black);
     filter: drop-shadow(0px 0px 5px black);
+    padding-right: 10px;
 }
 [socials] img:hover
 {
-    padding-right: 10px;
     -webkit-filter: drop-shadow(0px 0px 5px white);
     filter: drop-shadow(0px 0px 5px white);
+    padding-right: 10px;
 }
+/* #endregion */
 
+/* #region Projects */
+[projects]
+{
+    text-align: center;
+    padding-top: 20px;
+}
+[projects] img
+{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px black;
+    margin: 10px;
+    margin-top: 20px;
+    transition: all 0.2s
+}
+[projects] img:hover
+{
+    border-radius: 50px;
+    box-shadow: 0 0 10px 2px red;
+}
+/* #endregion */
+/* #endregion */
+
+/* #region Main Overlay Background AKA astolfo bg */
 [bgdiv]
 {
     position: absolute;
@@ -127,7 +149,6 @@ body {
     overflow: hidden;
     pointer-events: none;
 }
-
 [bg]
 {
     position: relative;
@@ -138,27 +159,7 @@ body {
     z-index: -1;
     opacity: .8;
 }
-
-[projects]
-{
-    text-align: center;
-    padding-top: 20px;
-}
-
-[projects] img
-{
-    border-radius: 10px;
-    box-shadow: 0 0 10px 2px black;
-    margin: 10px;
-    margin-top: 20px;
-    transition: all 0.2s
-}
-
-[projects] img:hover
-{
-    border-radius: 50px;
-    box-shadow: 0 0 10px 2px red;
-}
+/* #endregion */
 
 [btn] {
     position: relative;
