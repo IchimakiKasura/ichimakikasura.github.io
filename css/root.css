@@ -25,9 +25,8 @@
 body {
     background-color: var(--bg-color);
     padding: 10%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    overflow-x: hidden;
+    padding-top: 3%;
+    overflow: hidden;
 }
 
 [unselect] {
