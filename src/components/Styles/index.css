@@ -8,17 +8,17 @@
 }
 
 body {
-    padding-top: 68px;
     background-color: var(--bg-color);
 }
 
-.navbarPadding {
-    position: relative;
+.sectionHeader {
     padding-top: 70px;
     font-size: 50px;
-    height: 100vh;
 }
-.navbarPadding div {
+
+.sectionContents {
+    padding-bottom: 30vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
