@@ -1,0 +1,32 @@
+#navbar {
+    background-color: var(--bg-nav);
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+.pfp {
+    height: 60px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px 1px #b24255;
+    margin-left: 20px;
+    transition: box-shadow 0.5s;
+}
+.pfp:hover {
+    box-shadow: 0px 0px 20px 5px #ff96a8;
+}
+
+.navbtn {
+    margin: 5px;
+    width: 200px;
+    height: 65px;
+    font-size: xx-large;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbtn:hover{
+    background-color: var(--ctx-hover-bg);
+}

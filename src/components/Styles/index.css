@@ -1,0 +1,25 @@
+@import './root.css';
+@import './navbar.css';
+
+* {
+    margin: 0;
+    font-family: 'DefaultFont';
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 68px;
+    background-color: var(--bg-color);
+}
+
+.navbarPadding {
+    position: relative;
+    padding-top: 70px;
+    font-size: 50px;
+    height: 100vh;
+}
+.navbarPadding div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
