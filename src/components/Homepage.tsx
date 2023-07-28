@@ -1,14 +1,15 @@
-function Sections(id: string, header: string, content: string, color: string)
+function Sections(id: string, header: string, content: string, background: string)
 {
-    const classes = `vh-100 ${color}`
+    const imageSource = `Old2/Old/images/${background}.png`
 
     return (
         <div id={id}>
-            <section className={classes}>
-                <h1 className="sectionHeader">{header}</h1>
+            <section className="mainSection">
+                <h1 data-unselect="" className="sectionTitle">{header}</h1>
                 <div className="sectionContents">
                     <span className="display-2">{content}</span>
                 </div>
+                <img src={imageSource} alt={background}/>
             </section>
         </div>
     )
@@ -16,31 +17,28 @@ function Sections(id: string, header: string, content: string, color: string)
 
 function Homepage()
 {
-    const sections = [
-        Sections("About","ABOUT","THIS SECTION IS \"ABOUT\"","bg-danger"),
-        Sections("Projects","PROJECTS","THIS SECTION IS \"PROJECTS\"","bg-secondary"),
-        Sections("Contact","CONTACT","THIS SECTION IS \"CONTACT\"","bg-info"),
+    const sections: JSX.Element[] = [
+        Sections("About","ABOUT","THIS SECTION IS \"ABOUT\"", "hutao"),
+        Sections("Projects","PROJECTS","THIS SECTION IS \"PROJECTS\"", "akira"),
+        Sections("Contact","CONTACT","THIS SECTION IS \"CONTACT\"", "venti"),
     ]
 
     return (
         <>
             <div id="Home">
-                <section className="vh-100">
+                <section className="mainSection">
                     <div className="vh-100 justify-content-center align-items-center d-flex">
                         <h1 className="display-3">THIS WEBSITE IS UNDER CONSTRUCTION.</h1>
                     </div>
+                    <img src="Old2\Old\images\astolfo.png" alt="astolfo"/>
                 </section>
             </div>
 
             {sections}
 
-            <div id="Home">
-                <section className="vh-50">
-                    <div className="vh-50 justify-content-center align-items-center d-flex">
-                        <h1 className="display-5">
-                            THIS IS A FOOTER
-                        </h1>
-                    </div>
+            <div id="Footer">
+                <section className="footerSection justify-content-center align-items-center d-flex">
+                    <p>Designed by <a href="https://github.com/IchimakiKasura" className="text-decoration-none">Ichimaki Kasura</a></p>
                 </section>
             </div>
         </>

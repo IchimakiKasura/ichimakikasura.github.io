@@ -1,0 +1,15 @@
+#Home {
+
+}
+
+#Home .mainSection img {
+    z-index: -1;
+    opacity: 0.3;
+    position: relative;
+    float: right;
+    right: -10vh;
+    height: 100vh;
+    bottom: 75vh;
+
+    filter: drop-shadow(1vh 1vh 0.2vh #222);
+}

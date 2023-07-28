@@ -11,15 +11,24 @@ body {
     background-color: var(--bg-color);
 }
 
-.sectionHeader {
-    padding-top: 70px;
-    font-size: 50px;
+.mainSection {
+    height: 100vh;
+    overflow: hidden;
+} 
+.mainSection .sectionTitle {
+    padding-top: 20px;
+    opacity: 0.05;
+    font-size: 30vh;
 }
-
-.sectionContents {
-    padding-bottom: 30vh;
+.mainSection .sectionContents {
+    padding-bottom: 80vh;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.footerSection {
+    box-shadow: 0 4px 10px black inset;
+    padding-top: 20px;
+    height: 10vh;
 }
