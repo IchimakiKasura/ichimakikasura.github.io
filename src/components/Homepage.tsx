@@ -55,6 +55,7 @@ function Homepage()
                 <section className="mainSection">
                     <div className="sectionContents">
                         <h1 className="display-3">THIS WEBSITE IS UNDER CONSTRUCTION.</h1>
+                        <p><a href='Old2/index.html'>Visit the old website</a></p>
                         <div className='position-absolute' style={{top: "85vh"}}>
                             <button
                                 onClick={()=>document.getElementById("About")?.scrollIntoView()}

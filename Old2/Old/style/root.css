@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'DefaultFont';
-    src:  url("../font/UDDigiKyokashoN-R.ttc") format('truetype');
+    src:  url("./../font/UDDigiKyokashoN-R.ttc") format('truetype');
 }
 
 * {

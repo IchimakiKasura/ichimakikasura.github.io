@@ -23,11 +23,11 @@
     <meta name="twitter:description" content="Hello My name is Ichimaki Kasura and I do coding..." />
     <meta name="twitter:image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
 
-    <link rel="stylesheet" href="css/root.css"/>
-    <link rel="stylesheet" href="Old/style/ctx.css"/>
+    <link rel="stylesheet" href="./css/root.css"/>
+    <link rel="stylesheet" href="./Old/style/ctx.css"/>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/80595346?v=4%253F" type="image/x-icon">
 
-    <script src="Old/js/kasu-beta-2.0.oc.mini.js"></script>
+    <script src="./Old/js/kasu-beta-2.0.oc.mini.js"></script>
     <script>
     const nav_copy = (arg)=>navigator.clipboard.writeText(arg.getSelection());
 
@@ -140,7 +140,7 @@ function ToTheMoon()
     か("[main]").gt.style.opacity = 0;
     か("[main]").gt.style.transition = "all 0.2s";
     setTimeout(()=>{
-        location.href = "https://ichimakikasura.github.io/Old/old.html";
+        location.href = "./Old/old.html";
     },5000)
 }
 
@@ -152,5 +152,5 @@ CopyButton.evt("mouseleave", () => {
     if (!getSelection().isCollapsed) CopyButton.sty("background", "transparent")
 })
 </script>
-<script src="Old/js/ctx.js"></script>
+<script src="./Old/js/ctx.js"></script>
 </html>

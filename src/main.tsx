@@ -1,15 +1,15 @@
 import 'react'
 import ReactDOM from 'react-dom/client'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import './components/Styles/customAttributes.css'
-import './components/Styles/index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './components/Styles/customAttributes.less'
+import './components/Styles/index.less'
 
-import './components/Styles/PageSections/HomeSection.css'
-import './components/Styles/PageSections/AboutSection.css'
-import './components/Styles/PageSections/ProjectSection.css'
-import './components/Styles/PageSections/ContactSection.css'
-import './components/Styles/PageSections/FooterSection.css'
+import './components/Styles/PageSections/HomeSection.less'
+import './components/Styles/PageSections/AboutSection.less'
+import './components/Styles/PageSections/ProjectSection.less'
+import './components/Styles/PageSections/ContactSection.less'
+import './components/Styles/PageSections/FooterSection.less'
 
 import App from './App'
 
