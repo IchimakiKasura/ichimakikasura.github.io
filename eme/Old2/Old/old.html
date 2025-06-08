@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- main -->
+        <meta name="owner" content="IchimakiKasura" />
+        <meta name="title" content="Ichimaki Kasura | Portfolio" />
+        <meta name="description" content="Hello My name is Ichimaki Kasura and I do coding..." />
+        <meta property="image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
+        <!-- fb -->
+        <meta property="og:url" content="https://ichimakikasura.github.io/" />
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Ichimaki Kasura | Portfolio" />
+        <meta property="og:description" content="Hello My name is Ichimaki Kasura and I do coding..." />
+        <meta property="og:image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="IchimakiKasura" />
+        <meta name="twitter:title" content="Ichimaki Kasura | Portfolio" />
+        <meta name="twitter:description" content="Hello My name is Ichimaki Kasura and I do coding..." />
+        <meta name="twitter:image" content="https://pbs.twimg.com/media/E0e9wWMXsAEvazA.jpg" />
+
+        <link rel="preload" href="./style/root.css" as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/less@4.1.1" as="script"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./style/scrollUp.css">
+        <link rel="stylesheet" href="./style/ctx.css">
+        <link rel="stylesheet" href="./style/scroll.css">
+        <link rel="stylesheet/less" href="./style/Main.less" type="text/css" preload>
+        <link rel="stylesheet/less" href="./style/index.less" type="text/css" preload>
+        
+        <!-- less -->
+        <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" defer></script>
+
+        <!-- fuck jQuery, I'll use my homemade jQuery -->
+        <script src="https://rawcdn.githack.com/IchimakiKasura/ichimakikasura.github.io/990dfa042563af01e8b2f54388838a78c37023dc/Old2/Old/js/kasu-beta-2.0.oc.mini.js"></script>
+        <script src="./js/preload.js" type="module"></script>
+        <script src="./js/main.js" type="module" defer></script>
+        <script src="./js/webscroll.js" type="module" defer></script>
+        <script src="./js/ctx.js" type="module" defer></script>
+
+        <link rel="stylesheet" href="./style/root.css">
+        <title>Ichimaki Kasura</title>
+    </head>
+
+    <body>
+        <div class="preLoad" unselect>
+            <h1>Loading</h1>
+        </div>
+
+        <menu class="vertical-menu">
+            <a href="javascript:history.back()" menu-top>Back</a>
+            <a href="javascript:history.forward()">Forward</a>
+            <a href="">Reload</a>
+            <a href="javascript:nav_copy(this)" menu-copy>Copy</a>
+            <hr>
+            <p unselect>Created by Ichimaki</p>
+        </menu>
+
+        <a id="button" href="#main" onclick="int=0"></a>
+
+        <div class="nav">
+            <input type="checkbox" mobile-nav-menu>
+            <img src="https://avatars.githubusercontent.com/u/80595346?v=4?"
+                alt="Main Picture" loading="lazy" style="cursor: pointer;border-radius: 360%;box-shadow: 0 0 10px 2px black;"
+                title="Visit my Github" unselect />
+            </input>
+            <div nav-buttons>
+                <a class="nav-button" href="#about" title="About" onclick="int=1" unselect>About</a>
+                <a class="nav-button" href="#projects" title="projects" onclick="int=2" unselect>Projects</a>
+                <a class="nav-button" href="#contact" title="Contacts" onclick="int=3" unselect>Contact</a>
+            </div>
+        </div>
+
+        <div class="mobile-nav">
+            <div>
+                <button onclick="location.href='#about';removeNavMobile()">About</button>
+                <button onclick="location.href='#projects';removeNavMobile()">Projects</button>
+                <button onclick="location.href='#contact';removeNavMobile()">Contact</button>
+            </div>
+            <br>
+            <h2 style="text-align: center;">
+                Mobile Support isn't really fully supported yet.<br>
+                Because I suck at CSS.
+            </h2>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div id="main">
+                <section ismousehovered>
+                    <div Paragraphs>
+                        <p Paragraph-Intro>Hello! I'm</p>
+                        <h1 Paragraph-Name>Ichimaki Kasura</h1>
+                        <p Paragraph-Etc>A curious developer who still thinking on which language to master.</p>
+                        <br>
+                        (website currently w.i.p and I'll never know when)
+                    </div>
+                    <div class="arrow-container animated fadeInDown" style="display: none" ScrollArrow>
+                        <div class="arrow-2" onclick="location.href = '#about'; int=1">
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                        <div class="arrow-1 animated hinge infinite zoomIn"></div>
+                    </div>
+                    <img src="./images/astolfo.png" alt="astolfo" unselect bg>
+                </section>
+            </div>
+
+            <div id="about">
+                <section ismousehovered style="position: relative;">
+                    <div aboutDiv>
+                        <h1 style="padding-top:2vh; font-size: 10vh;">
+                            About me
+                        </h1>
+                        <h2 style="padding:1%; font-size: 2.5vh">
+                            The name is <a href="https://github.com/IchimakiKasura"
+                                style="color:red;text-decoration:none;">Ichimaki Kasura</a>, I like to code stuff and make
+                            stuff<br>
+                            that keeps me motivated to continue my hobby on being a developer.<br><br>
+                            Wanna be a Full-stack Developer, a Game Developer or Senior Programmer but it is rather
+                            impossible<br>
+                            since I am often being lazy most of the times<br>
+                            but in the end I'm just a junior programmer.<br>
+                            And nope not being too humble I'm just being straightforward<br>
+                            because I'm that guy who still questions my own skills.
+                        </h2>
+                        <h1 style="font-size: 8vh;padding-top:5vh;padding-bottom:1vh;" lng>Languages</h1>
+                        <img src="https://skillicons.dev/icons?i=nodejs" loading="lazy" style="width: 15vh" title="Node JS">  
+                        <img src="https://skillicons.dev/icons?i=cs" style="width: 15vh" title="C# (dotnet)">  
+                        <img src="https://skillicons.dev/icons?i=js" loading="lazy" style="width: 15vh" title="Javascript">
+                        <h5 style="padding-top:3vh;padding-bottom:1vh;font-size:1.5vh">
+                            Other ones that I used but not really mastered or good with:
+                            <br>
+                            (some are not really a language)
+                        </h5>
+                        <img src="https://skillicons.dev/icons?i=html" title="Hyper Text Markup Language"> 
+                        <img src="https://skillicons.dev/icons?i=css" title="Cascading Style Sheet"> 
+                        <img src="https://skillicons.dev/icons?i=php"  title="HyperText Preprocessor"> 
+                        <img src="https://skillicons.dev/icons?i=java" title="Java"> 
+                        <img src="https://skillicons.dev/icons?i=cpp" title="C++"> 
+                        <img src="https://skillicons.dev/icons?i=py" title="Python"> 
+                        <img src="https://skillicons.dev/icons?i=mysql" title="MySQL"> 
+                        <img src="https://skillicons.dev/icons?i=bash" title="Bash">
+                        <h5 style="padding-top:1vh;padding-bottom:1vh;font-size:1.5vh">
+                            Others:
+                        </h5>
+                        <img src="https://skillicons.dev/icons?i=unity" title="Unity3D"> 
+                        <img src="https://skillicons.dev/icons?i=dotnet" title="Dotnet Framework/Core"> 
+                        <img src="https://skillicons.dev/icons?i=visualstudio" title="Visual Studio 2022"> 
+                        <img src="https://skillicons.dev/icons?i=vscode" title="vscode"> 
+                        <img src="https://skillicons.dev/icons?i=ps" title="Photoshop"><br> 
+                    </div>
+                    <img src="./images/hutao.png" alt="hutao" unselect bg>
+                </section>
+            </div>
+
+            <div id="projects">
+                <section ismousehovered>
+                    <h1 style="padding-top:2vh; font-size: 10vh;">
+                        Projects
+                    </h1>
+                    <p>
+                        So this is where my projects will display...
+                    </p>
+                    <img src="./images/akira.png" alt="akira" unselect bg>
+                </section>
+            </div>
+
+            <div id="contact">
+                <section ismousehovered ctn>
+                    <h1 style="padding-top:2vh; font-size: 10vh;">
+                        📬Contact
+                    </h1>
+                    <h2 style="padding-left:20vh;padding-top:5vh;font-size: 5vh;">
+                        Get in touch?
+                    </h2>
+                    <p style="padding: 5vh;font-size:3vh;padding-left:25vh;">
+                        Email:&nbsp;&nbsp;&nbsp;<a href="mailto:IchimakiKasura@gmail.com">IchimakiKasura@gmail.com</a><br>
+                        Discord: <a href="https://discord.com/users/716593062217908274">Ichimaki#7773</a>
+                    </p>
+                    <img src="./images/venti.png" alt="venti" unselect bg>
+                </section>
+            </div>
+
+            <div id="footer" class="footer" ismousehovered>
+                <p>Designed by <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a></p>
+            </div>
+        </div>
+    </body>
+
+</html>
