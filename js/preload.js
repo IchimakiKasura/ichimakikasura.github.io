@@ -60,10 +60,10 @@ window.onload = () => {
     if (か.isMobile)
         MobileSwitch();
 
-    // setTimeout(() => {
+    setTimeout(() => {
         か(".preLoad").sty("opacity", 0);
         か(".nav").sty("top", "0");
-    // }, 1000)
+    }, 1)
 
     setTimeout(() => {
         か(".preLoad").sty("display", "none");
