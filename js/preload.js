@@ -63,7 +63,7 @@ window.onload = () => {
     setTimeout(() => {
         か(".preLoad").sty("opacity", 0);
         か(".nav").sty("top", "0");
-    }, 1)
+    }, 1000)
 
     setTimeout(() => {
         か(".preLoad").sty("display", "none");
