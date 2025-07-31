@@ -15,15 +15,15 @@
 #   |-------------------------→ X
 #
 
-a,v,tJ,tL = 100, 100, 1, 1
-C,O = True, False # constant vars
-ZU,ZD = 265, 163
+c,o,a,v,tJ,tL = True, False, 100, 100, 1, 1
+zu,zd = 265, 163
 pCrn, seq = [
     posx(0, 0, z, a, b, c),      # Plate 1 corner
     posx(60, 0, z, a, b, c),     # Plate 2 corner
     posx(100, 0, z, a, b, c)     # Plate 3 corner
 ], []
-m, f = 10, m*2
+m = 10
+f = m*2
 
 def grb(x):
     set_tool_digital_outputs([1, -2] if x else [-1, 2])
@@ -33,21 +33,21 @@ def mSeq(x):
     for step in x:
         movel(step[0], v,a,tL)
         movel(step[1], v,a,tL)
-        grb(C)
+        grb(c)
         movel(step[0], v,a,tL)
         movel(step[2], v,a,tL)
         movel(step[3], v,a,tL)
-        grb(O)
+        grb(o)
         movel(step[2], v,a,tL)
 
 movej([90,0,90,0,90,0], v,a,tJ) # align default position
-grb(O)
+grb(o)
 
 def mv(pA, distA_x, distA_Y, pB, distB_X, distB_Y):
-    pA_pos = posx(pCrn[pA] + distA_x, pCrn[pA] + distA_Y, ZU, a, b, c)
-    pA_apr = posx(pCrn[pA] + distA_x, pCrn[pA] + distA_Y, ZD, a, b, c)
-    pB_pos = posx(pCrn[pB] + distB_X, pCrn[pB] + distB_Y, ZU, a, b, c)
-    pB_apr = posx(pCrn[pB] + distB_X, pCrn[pB] + distB_Y, ZD, a, b, c)
+    pA_pos = posx(pCrn[pA] + distA_x, pCrn[pA] + distA_Y, zu, a, b, c)
+    pA_apr = posx(pCrn[pA] + distA_x, pCrn[pA] + distA_Y, zd, a, b, c)
+    pB_pos = posx(pCrn[pB] + distB_X, pCrn[pB] + distB_Y, zu, a, b, c)
+    pB_apr = posx(pCrn[pB] + distB_X, pCrn[pB] + distB_Y, zd, a, b, c)
     seq.append([pA_pos, pA_apr, pB_pos, pB_apr])
 
 # should move the bottom-left corner of the first plate to the second plate's middle
@@ -57,4 +57,4 @@ mv(0, m, m,  1, f, f)
 # should move the second plate's middle to the third plate's bottom left
 mv(1, m, m,  2, 0, 0)
 
-mSeq(seq)
+mSeq(seq) # start
