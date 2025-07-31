@@ -1,0 +1,60 @@
+#   Plate 1               Plate 2               Plate 3
+#   ┌────────┬────────┬────────┐   ┌────────┬────────┬────────┐   ┌────────┬────────┬────────┐
+#   │[0,20]  │[10,20] │[20,20] │   │[30,20] │[40,20] │[50,20] │   │[60,20] │[70,20] │[80,20] │
+#   ├────────┼────────┼────────┤   ├────────┼────────┼────────┤   ├────────┼────────┼────────┤
+#   │[0,10]  │[10,10] │[20,10] │   │[30,10] │[40,10] │[50,10] │   │[60,10] │[70,10] │[80,10] │
+#   ├────────┼────────┼────────┤   ├────────┼────────┼────────┤   ├────────┼────────┼────────┤
+#   │[0,0]   │[10,0]  │[20,0]  │   │[30,0]  │[40,0]  │[50,0]  │   │[60,0]  │[70,0]  │[80,0]  │
+#   └────────┴────────┴────────┘   └────────┴────────┴────────┘   └────────┴────────┴────────┘
+#              [x,y]
+#   ↑ Y
+#   |
+#   |   
+#   |   
+#   |                  
+#   |-------------------------→ X
+#
+
+a,v,tJ,tL = 100, 100, 1, 1
+C,O = True, False # constant vars
+ZU,ZD = 265, 163
+pCrn, seq = [
+    posx(0, 0, z, a, b, c),      # Plate 1 corner
+    posx(60, 0, z, a, b, c),     # Plate 2 corner
+    posx(100, 0, z, a, b, c)     # Plate 3 corner
+], []
+m, f = 10, m*2
+
+def grb(x):
+    set_tool_digital_outputs([1, -2] if x else [-1, 2])
+    wait(0.2)
+
+def mSeq(x):
+    for step in x:
+        movel(step[0], v,a,tL)
+        movel(step[1], v,a,tL)
+        grb(C)
+        movel(step[0], v,a,tL)
+        movel(step[2], v,a,tL)
+        movel(step[3], v,a,tL)
+        grb(O)
+        movel(step[2], v,a,tL)
+
+movej([90,0,90,0,90,0], v,a,tJ) # align default position
+grb(O)
+
+def mv(pA, distA_x, distA_Y, pB, distB_X, distB_Y):
+    pA_pos = posx(pCrn[pA] + distA_x, pCrn[pA] + distA_Y, ZU, a, b, c)
+    pA_apr = posx(pCrn[pA] + distA_x, pCrn[pA] + distA_Y, ZD, a, b, c)
+    pB_pos = posx(pCrn[pB] + distB_X, pCrn[pB] + distB_Y, ZU, a, b, c)
+    pB_apr = posx(pCrn[pB] + distB_X, pCrn[pB] + distB_Y, ZD, a, b, c)
+    seq.append([pA_pos, pA_apr, pB_pos, pB_apr])
+
+# should move the bottom-left corner of the first plate to the second plate's middle
+mv(0, 0, 0,  1, m, m)
+# should move the middle of the first plate to the second plate's top right
+mv(0, m, m,  1, f, f)
+# should move the second plate's middle to the third plate's bottom left
+mv(1, m, m,  2, 0, 0)
+
+mSeq(seq)
