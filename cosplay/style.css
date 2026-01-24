@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 'DefaultFont';
+    src:  url("./../font/UDDigiKyokashoN-R.ttc") format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DefaultFont';
+}
+
+body {
+    background-color: #6f4c4c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.floating-window {
+    background-color: #ffacac;
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 1100px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header {
+    font-size: 70px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.paragraph {
+    font-size: 17px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.image-placeholder {
+    width: calc(100% + 80px);
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: -40px;
+    margin-right: -40px;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-placeholder {
+    font-size: 25px;
+    color: #000000;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.contact-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 auto 30px auto;
+    width: 200px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+    box-shadow: none;
+}
+
+.social-btn img {
+    width: 50px;
+    height: 50px;
+}
+
+.social-btn.facebook {
+    background-color: transparent;
+}
+
+.social-btn.instagram {
+    background-color: transparent;
+}
+
+.social-btn.tiktok {
+    background-color: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-window {
+        max-width: 90%;
+        padding: 30px;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .paragraph {
+        font-size: 13px;
+    }
+
+    .text-placeholder {
+        font-size: 20px;
+    }
+
+    .contact-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .social-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-btn img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-window {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .paragraph {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .image-placeholder {
+        margin-bottom: 15px;
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+    }
+
+    .text-placeholder {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .contact-button {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-bottom: 20px;
+        max-width: 70%;
+    }
+
+    .social-buttons {
+        gap: 15px;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-btn img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.text-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    text-align: center;
+    max-width: 90%;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
