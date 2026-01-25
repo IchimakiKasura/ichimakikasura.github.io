@@ -31,7 +31,7 @@
     </head>
 
     <body>
-        <!-- Cherry Blossom Effect -->
+        
         <div class="cherry-blossom-container" id="cherryBlossomContainer"></div>
 
         <div class="floating-window">
@@ -44,17 +44,20 @@
 
             <p class="text-placeholder">For sponsorships or Collaborations, Feel free to contact me below.</p>
 
-            <button class="contact-button" id="contactBtn">Contact Me</button>
+            <div class="buttons-container">
+                <button class="contact-button" id="contactBtn">Contact Me</button>
+                <button class="donate-button" id="donateBtn">Donate</button>
+            </div>
 
-            <!-- Modal Popup -->
-            <div id="contactModal" class="modal">
+            <!-- Dynamic Modal -->
+            <div id="dynamicModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <div class="modal-image-placeholder">
-                        <img src="woah.jpg" alt="Profile Image">
+                    <div class="modal-image-placeholder" id="modalImageContainer" style="display: none;">
+                        <img id="modalImage" src="" alt="Modal Image">
                     </div>
-                    <p>Currently busy and not available for collab yet hehe</p>
-                    <button class="modal-btn" id="closeBtn">Got it!</button>
+                    <p id="modalText">Modal content</p>
+                    <button class="modal-btn" id="closeBtn">Omkie!</button>
                 </div>
             </div>
 
@@ -78,25 +81,72 @@
 
         <script>
             const contactBtn = document.getElementById('contactBtn');
-            const contactModal = document.getElementById('contactModal');
+            const donateBtn = document.getElementById('donateBtn');
+            const dynamicModal = document.getElementById('dynamicModal');
             const closeBtn = document.getElementById('closeBtn');
             const closeSpan = document.querySelector('.close');
+            const modalImageContainer = document.getElementById('modalImageContainer');
+            const modalImage = document.getElementById('modalImage');
+            const modalText = document.getElementById('modalText');
+            const imagePlaceholder = document.querySelector('.image-placeholder');
+
+            // Mouse tracking for shiny effect
+            imagePlaceholder.addEventListener('mousemove', function(e) {
+                const rect = imagePlaceholder.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                imagePlaceholder.style.setProperty('--mouse-x', `${x}%`);
+                imagePlaceholder.querySelector('::after').style.opacity = '1';
+            });
+
+            imagePlaceholder.addEventListener('mouseleave', function() {
+                imagePlaceholder.style.setProperty('--mouse-x', '-100%');
+            });
+
+            // Touch support for mobile
+            imagePlaceholder.addEventListener('touchmove', function(e) {
+                const rect = imagePlaceholder.getBoundingClientRect();
+                const touch = e.touches[0];
+                const x = ((touch.clientX - rect.left) / rect.width) * 100;
+                imagePlaceholder.style.setProperty('--mouse-x', `${x}%`);
+            });
+
+            imagePlaceholder.addEventListener('touchend', function() {
+                imagePlaceholder.style.setProperty('--mouse-x', '-100%');
+            });
+
+            function openModal(imageUrl, text, borderRadius = '50%', imageSize = '120px') {
+                if (imageUrl) {
+                    modalImage.src = imageUrl;
+                    modalImageContainer.style.borderRadius = borderRadius;
+                    modalImage.style.borderRadius = borderRadius;
+                    modalImageContainer.style.width = imageSize;
+                    modalImageContainer.style.height = imageSize;
+                    modalImageContainer.style.display = 'flex';
+                } else {
+                    modalImageContainer.style.display = 'none';
+                }
+                modalText.textContent = text;
+                dynamicModal.style.display = 'block';
+            }
+
+            function closeModal() {
+                dynamicModal.style.display = 'none';
+            }
 
             contactBtn.addEventListener('click', function() {
-                contactModal.style.display = 'block';
+                openModal('woah.jpg', 'Currently busy and not available for collab yet hehe', '50%', '120px');
             });
 
-            closeBtn.addEventListener('click', function() {
-                contactModal.style.display = 'none';
+            donateBtn.addEventListener('click', function() {
+                openModal('gcash.png', 'Support my cosplay journey! Any donations are greatly appreciated! ❤️', '10px', '300px');
             });
 
-            closeSpan.addEventListener('click', function() {
-                contactModal.style.display = 'none';
-            });
+            closeBtn.addEventListener('click', closeModal);
+            closeSpan.addEventListener('click', closeModal);
 
             window.addEventListener('click', function(event) {
-                if (event.target === contactModal) {
-                    contactModal.style.display = 'none';
+                if (event.target === dynamicModal) {
+                    closeModal();
                 }
             });
         </script>
