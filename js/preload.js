@@ -63,14 +63,14 @@ window.onload = () => {
     setTimeout(() => {
         か(".preLoad").sty("opacity", 0);
         か(".nav").sty("top", "0");
-    }, 0)
-    // }, 1000)
+    // }, 0)
+    }, 1000)
 
     setTimeout(() => {
         か(".preLoad").sty("display", "none");
         か("[ScrollArrow]").sty("display", "block");
-    }, 0)
-    // }, 1350)
+    // }, 0)
+    }, 1350)
 
     setTimeout(() => {
         か("[ScrollArrow]").sty("display", "block");
