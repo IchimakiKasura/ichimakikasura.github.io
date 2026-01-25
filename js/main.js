@@ -47,3 +47,18 @@ CopyButton.evt("mouseleave", () => {
     if (document.visibilityState == "visible")
         CanScroll = true;
 });
+
+// Project Carousel Infinite Scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.project-carousel');
+    if (carousel) {
+        const cards = Array.from(carousel.querySelectorAll('.project-card'));
+        for (let i = 0; i < 3; i++) {
+            cards.forEach(card => {
+                const clone = card.cloneNode(true);
+                carousel.appendChild(clone);
+            });
+        }
+    }
+});
+
