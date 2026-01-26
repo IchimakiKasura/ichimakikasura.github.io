@@ -67,14 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
 The name is <a href="https://github.com/IchimakiKasura" target="_blank" style="color:red;text-decoration:none;">Ichimaki Kasura</a>,
 I do mostly <a href="/cosplay" target="_blank" style="color:red;text-decoration:none;">cosplays</a> now and other hobbies.<br>
 I barely do coding these days.<br><br>
-I do cosplays, guitar <i>(e-guitar)</i>, build computers, and some Arduino stuffs<br>
+I do cosplays, guitar, build computers, and some Arduino stuffs<br>
 or mini-side projects. I have little bit of knowledge/skills on videography and<br>
 editing not that really amusing but its enough. Leaning more on travelling and <br>
 adventure stuff because I kinda want to explore the world while I'm still young.<br>
 As for coding, I used to do web development, game development, and some<br>
 desktop applications. But now I barely code these days since I'm focusing<br>
 more on my other hobbies. I still do code on the side for fun or for small<br>
-projects.`)
+projects. I'm also currently a Freelance Computer technician.`)
 
 // Skill icons
 const skills = [
@@ -90,13 +90,13 @@ const skills = [
     },
     {
         icon: "https://skillicons.dev/icons?i=js",
-        title: "Javascript",
+        title: "Vanilla Javascript",
         spacing: " "
     },
     {
         icon: "https://skillicons.dev/icons?i=html",
         title: "Hyper Text Markup Language",
-        spacing: "<br><br>"
+        spacing: " "
     },
     {
         icon: "https://skillicons.dev/icons?i=php",
@@ -117,7 +117,7 @@ const skills = [
     {
         icon: "https://skillicons.dev/icons?i=py",
         title: "Python",
-        spacing: "<br><br>"
+        spacing: " "
     },
     {
         icon: "https://skillicons.dev/icons?i=mysql",
@@ -137,8 +137,8 @@ const skills = [
     },
     {
         icon: "https://skillicons.dev/icons?i=dotnet",
-        title: "[No longer learning] Dotnet Framework/Core",
-        spacing: "<br><br>"
+        title: "Dotnet Framework/Core",
+        spacing: " "
     },
     {
         icon: "https://skillicons.dev/icons?i=vscode",
@@ -148,7 +148,7 @@ const skills = [
     {
         icon: "https://skillicons.dev/icons?i=ps",
         title: "Photoshop",
-        spacing: "<br>"
+        spacing: "<br><br>"
     }
 ]
 

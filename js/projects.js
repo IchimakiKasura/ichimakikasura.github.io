@@ -53,6 +53,12 @@ projects = [
         image: "./images/projects/pos.png",
         link: "https://ichimakikasura.github.io/pos/"
     },
+    {
+        title: "UCSP Peta Compilation Website",
+        description: "[School Side Project] A Website compiling Performance Tasks for UCSP subject",
+        image: "./images/projects/ucsp.png",
+        link: "https://ichimakikasura.github.io/ICT/UCSP"
+    },
 ];
 
 
