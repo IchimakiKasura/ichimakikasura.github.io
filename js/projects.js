@@ -3,7 +3,7 @@ projects = [
         title: "3D Tank Trouble",
         description: "[Discontinued] TankTrouble recreation into 3D.",
         image: "./images/projects/3dtank.jpg",
-        link: null
+        link: "./downloadables/beta 5.rar"
     },
     {
         title: "Boxy Quest",
@@ -45,7 +45,7 @@ projects = [
         title: "IC-TAP",
         description: "[School Project] A Flappy Bird Style Game made with Adobe Animate",
         image: "./images/projects/IC-TAP.png",
-        link: null
+        link: "./downloadables/ICTAP.apk"
     },
     {
         title: "Trap shop POS Project",

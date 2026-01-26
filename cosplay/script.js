@@ -7,12 +7,18 @@ const modalImageContainer = document.getElementById('modalImageContainer');
 const modalImage = document.getElementById('modalImage');
 const modalText = document.getElementById('modalText');
 const imagePlaceholder = document.querySelector('.image-placeholder');
+const modalImages = ['images/woah.jpg', 'images/gcash.png'];
+
+modalImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
 
 imagePlaceholder.addEventListener('mousemove', function(e) {
     const rect = imagePlaceholder.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     imagePlaceholder.style.setProperty('--mouse-x', `${x}%`);
-    imagePlaceholder.querySelector('::after').style.opacity = '1';
+    // imagePlaceholder.querySelector('::after').style.opacity = '1';
 });
 
 imagePlaceholder.addEventListener('mouseleave', function() {
@@ -50,11 +56,11 @@ function closeModal() {
 }
 
 contactBtn.addEventListener('click', function() {
-    openModal('woah.jpg', 'Currently busy and not available for collab yet hehe', '50%', '120px');
+    openModal(modalImages[0], 'Currently busy and not available for collab yet hehe', '50%', '120px');
 });
 
 donateBtn.addEventListener('click', function() {
-    openModal('gcash.png', 'Support my cosplay journey! Any donations are greatly appreciated! ❤️', '10px', '300px');
+    openModal(modalImages[1], 'Support my cosplay journey! Any donations are greatly appreciated! ❤️', '10px', '300px');
 });
 
 closeBtn.addEventListener('click', closeModal);
