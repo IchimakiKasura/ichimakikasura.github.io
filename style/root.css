@@ -30,6 +30,9 @@
 }
 
 body { background-color: var(--bg-color); overflow:hidden; overflow-y:visible;}
+body::-webkit-scrollbar {
+    display: none;
+}
 
 .preLoad {
     z-index: 2;
@@ -117,6 +120,7 @@ body { background-color: var(--bg-color); overflow:hidden; overflow-y:visible;}
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    cursor: pointer;
     flex-shrink: 0;
 }
 
