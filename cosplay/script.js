@@ -1,39 +1,17 @@
 const contactBtn = document.getElementById('contactBtn');
 const donateBtn = document.getElementById('donateBtn');
+const merchBtn = document.getElementById('merchBtn');
 const dynamicModal = document.getElementById('dynamicModal');
 const closeBtn = document.getElementById('closeBtn');
 const closeSpan = document.querySelector('.close');
 const modalImageContainer = document.getElementById('modalImageContainer');
 const modalImage = document.getElementById('modalImage');
 const modalText = document.getElementById('modalText');
-const imagePlaceholder = document.querySelector('.image-placeholder');
-const modalImages = ['images/woah.jpg', 'images/gcash.png'];
+const modalImages = ['images/woah.jpg', 'images/gcash.png', 'images/woah2.jpg'];
 
 modalImages.forEach(src => {
     const img = new Image();
     img.src = src;
-});
-
-imagePlaceholder.addEventListener('mousemove', function(e) {
-    const rect = imagePlaceholder.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    imagePlaceholder.style.setProperty('--mouse-x', `${x}%`);
-    // imagePlaceholder.querySelector('::after').style.opacity = '1';
-});
-
-imagePlaceholder.addEventListener('mouseleave', function() {
-    imagePlaceholder.style.setProperty('--mouse-x', '-100%');
-});
-
-imagePlaceholder.addEventListener('touchmove', function(e) {
-    const rect = imagePlaceholder.getBoundingClientRect();
-    const touch = e.touches[0];
-    const x = ((touch.clientX - rect.left) / rect.width) * 100;
-    imagePlaceholder.style.setProperty('--mouse-x', `${x}%`);
-});
-
-imagePlaceholder.addEventListener('touchend', function() {
-    imagePlaceholder.style.setProperty('--mouse-x', '-100%');
 });
 
 function openModal(imageUrl, text, borderRadius = '50%', imageSize = '120px') {
@@ -61,6 +39,10 @@ contactBtn.addEventListener('click', function() {
 
 donateBtn.addEventListener('click', function() {
     openModal(modalImages[1], 'Support my cosplay journey! Any donations are greatly appreciated! ❤️', '10px', '300px');
+});
+
+merchBtn.addEventListener('click', function() {
+    openModal(modalImages[2], 'Coscards are on the way :>', '50%', '120px');
 });
 
 closeBtn.addEventListener('click', closeModal);

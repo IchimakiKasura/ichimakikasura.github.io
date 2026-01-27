@@ -29,30 +29,76 @@
         <!-- less -->
         <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" defer></script>
 
-        <title>Ichimaki's social</title>
+        <title>Ichimaki's Social</title>
         <link rel="stylesheet" href="cherry-blossom.css">
     </head>
     <body>
         <div class="cherry-blossom-container" id="cherryBlossomContainer"></div>
-        <div class="floating-window">
-            <h1 class="header">Ichimaki Kasura</h1>
-            <p class="paragraph">A <i>(femboy)</i> Cosplayer with washed coding and editing skills </p>
 
-            <div class="image-placeholder">
-                <img src="images/main.jpg" alt="main image lmao" loading="lazy">
+        <div class="floating-window">
+
+            <div class="introduction">
+                <section class="int-Introduction">
+                    <img src="images/me.png" alt="me" pfp loading="lazy">
+                    <h1 class="header">Ichimaki Kasura</h1>
+                    <p class="paragraph">Cosplayer · Creator · Washed Developer</p> 
+                    <h2 class="header2">
+                         Nice to meet you!, I'm <span style="color: red">Ichimaki Kasura!</span> or simply <span style="color: red">Ichi</span>.
+                    I do cosplay and dabble into content creation. I also do videography, photography and editing.
+                    I also code sometimes if I have the time and energy lol.<br><br>
+                    INTJ, loves to make friends but is too anxious to do so, so feel free to reach out to me anytime!
+                    <i>(NPC Energy person)</i>
+                    </h2>
+                </section>
+
+                <section class="int-games-cosplans-table">
+                    <section class="int-games">
+                        <h1 class="header-2nd">Games I Play<span style="font-size: 2px;">(sometimes)</span></h1>
+                        <img src="images/games/gi.png" alt="Genshin Impact">
+                        <img src="images/games/zzz.png" alt="Zenless Zone Zero">
+                        <img src="images/games/cs2.png" alt="Counter Strike 2">
+                        <img src="images/games/val.png" alt="Valorant"><br>
+                        <img src="images/games/mc.png" alt="Minecraft">
+                        <img src="images/games/lol.png" alt="League of Legends">
+                    </section>
+
+                    <section class="int-cosplans">
+                        <h1 class="header-2nd">Cosplans</h1>
+                        <br>
+                        <h2>Clove <span style="font-size: 5px">(Valorant)</span></h2>
+                        <h2>Frieren <span style="font-size: 5px">(Sousou no Frieren)</span></h2>
+                        <h2>Megumin <span style="font-size: 5px">(KonoSuba)</span></h2>
+                        <h2>Furina <span style="font-size: 5px">(Genshin Impact [redo])</span></h2>
+                        <h2>Najimi osana <span style="font-size: 5px">(Komi Can't Communicate)</span></h2>
+                    </section>
+                </section>
+
+                <section class="int-pictures">
+                    <h1 class="header-2nd">My Cosplays</h1>
+                    <img src="images/gallery/casual_chisato.jpg" alt="casual chisato" loading="lazy">
+                    <img src="images/gallery/furina.jpg" alt="furina" loading="lazy">
+                    <img src="images/gallery/aira.jpg" alt="aira" loading="lazy">
+                    <img src="images/gallery/kita.jpg" alt="kita" loading="lazy">
+                    <img src="images/gallery/chisato.JPG" alt="chisato" loading="lazy">
+                    <img src="images/gallery/lonely.jpg" alt="kita lonely" loading="lazy">
+                    <img src="images/gallery/aira_2.jpg" alt="aira" loading="lazy">
+                    <img src="images/gallery/casual_chisato_2.jpg" alt="casual chisato 2" loading="lazy">
+                    <img src="images/gallery/furina_2.jpg" alt="furina 2" loading="lazy">
+                </section>
             </div>
 
-            <p class="text-placeholder">For sponsorships or Collaborations, Feel free to contact me below.</p>
+            <p class="text-placeholder">For Support, Sponsorships or Collaborations, Feel free to contact me below.</p>
 
             <div class="buttons-container">
-                <button class="contact-button" id="contactBtn">Contact Me</button>
-                <button class="donate-button" id="donateBtn">Donate</button>
+                <button class="button-base" id="contactBtn">Contact Me</button>
+                <button class="button-base" id="donateBtn">Donate</button>
+                <button class="button-base" id="merchBtn">Merch</button>
             </div>
 
             <div id="dynamicModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <div class="modal-image-placeholder" id="modalImageContainer" style="display: none;">
+                    <div class="modal-image-placeholder" id="modalImageContainer">
                         <img id="modalImage" src="" alt="Modal Image" loading="lazy">
                     </div>
                     <p id="modalText">Modal content</p>
@@ -79,11 +125,16 @@
                 <a href="https://discord.com/users/716593062217908274" target="_blank"  class="social-btn" title="Discord">
                     <img src="https://skillicons.dev/icons?i=discord" alt="discord" loading="lazy">
                 </a>
+                <a href="https://ichimakikasura.github.io" target="_blank"  class="social-btn" title="Portfolio">
+                    <img src="https://avatars.githubusercontent.com/u/80595346?v=4%253F" style="border-radius: 50%;" alt="Portfolio" loading="lazy">
+                </a>
                 <!-- Removed prank lmao idfk -->
                 <!-- <a class="social-btn" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ')" title="OnlyFans">
                     <img src="images/onlyfans.webp" alt="overflow" loading="lazy" style="object-fit: contain;">
                 </a> -->
             </div>
+        </div>
+
         <p class="text-footer">All made by yours truly terrible coder with a passion on cosplaying lmao</p>
 
         <script src="script.js" defer></script>
