@@ -21,12 +21,16 @@ function createCherryBlossom() {
     }, (duration + delay) * 1000);
 }
 
-for (let i = 0; i < blossomCount; i++) {
-    setTimeout(() => {
+function initCherryBlossoms() {
+    for (let i = 0; i < blossomCount; i++) {
+        setTimeout(() => {
+            createCherryBlossom();
+        }, i * 200);
+    }
+
+    setInterval(() => {
         createCherryBlossom();
-    }, i * 200);
+    }, 500);
 }
 
-setInterval(() => {
-    createCherryBlossom();
-}, 500);
+// initCherryBlossoms();

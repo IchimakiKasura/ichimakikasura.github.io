@@ -1,7 +1,7 @@
-@primary: #007bff;
-@primary-hover: #0056b3;
+@primary: rgba(255, 192, 203, 0.5);
+@primary-hover: rgba(255, 192, 203);
 @gray: #333;
-@border: #888;
+@border: #000000;
 
 .modal {
     display: none;
@@ -18,7 +18,7 @@
         padding: 20px;
         border: 1px solid @border;
         border-radius: 10px;
-        background: #fff;
+        background: #ffacac;
         text-align: center;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         z-index: 1001;
@@ -41,12 +41,12 @@
     right: 15px;
     font-size: 28px;
     font-weight: bold;
-    color: #aaa;
+    color: #000;
     cursor: pointer;
 
     &:hover,
     &:focus {
-        color: #000;
+        color: #505050;
     }
 }
 
@@ -71,13 +71,13 @@
 }
 
 .modal-btn {
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
     padding: 10px 20px;
     margin-top: 10px;
     border-radius: 5px;
     border: 0;
     cursor: pointer;
     font-size: 14px;
-    color: #fff;
     background: @primary;
     transition: background-color 0.3s ease;
 
