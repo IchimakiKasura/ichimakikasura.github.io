@@ -33,4 +33,4 @@ function initCherryBlossoms() {
     }, 500);
 }
 
-// initCherryBlossoms();
+initCherryBlossoms();

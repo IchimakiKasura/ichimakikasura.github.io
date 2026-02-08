@@ -25,7 +25,7 @@ function openModal(imageUrl, text, borderRadius = '50%', imageSize = '120px') {
     } else {
         modalImageContainer.style.display = 'none';
     }
-    modalText.textContent = text;
+    modalText.innerHTML = text;
     dynamicModal.style.display = 'block';
 }
 
@@ -34,7 +34,7 @@ function closeModal() {
 }
 
 contactBtn.addEventListener('click', function() {
-    openModal(modalImages[0], 'Currently busy and not available for collab yet hehe', '50%', '120px');
+    openModal(modalImages[0], '<i>Currently busy and not available for collab yet hehe</i><br><br>If you have any inquiries, please email ichimakikasura@gmail.com', '50%', '120px');
 });
 
 donateBtn.addEventListener('click', function() {
