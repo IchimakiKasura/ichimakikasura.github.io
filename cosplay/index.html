@@ -25,13 +25,13 @@
         <meta name="twitter:image" content="https://ichimakikasura.github.io/cosplay/download.png" />
 
         <link rel="preload" href="https://cdn.jsdelivr.net/npm/less@4.1.1" as="script"/>
-        <link rel="stylesheet/less" href="style.less" type="text/css" preload>
-        <link rel="stylesheet/less" href="modal.less" type="text/css" preload>
+        <link rel="stylesheet/less" href="styles/style.less" type="text/css" preload>
+        <link rel="stylesheet/less" href="styles/modal.less" type="text/css" preload>
         <!-- less -->
         <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" defer></script>
         
         <script src="https://rawcdn.githack.com/IchimakiKasura/ichimakikasura.github.io/990dfa042563af01e8b2f54388838a78c37023dc/Old2/Old/js/kasu-beta-2.0.oc.mini.js"></script>
-        <script>
+        <script>            
             setTimeout(() => か(".preLoad").sty("opacity", 0), 1000)
             setTimeout(() => か(".preLoad").sty("display", "none"), 1350)
         </script>
@@ -63,12 +63,23 @@
         </style>
 
         <title>Ichimaki's Social</title>
-        <link rel="stylesheet" href="cherry-blossom.css">
-        <script src="cherry-blossom.js" defer></script>
+        <link rel="stylesheet" href="styles/cherry-blossom.css">
+        <script src="js/cherry-blossom.js" defer></script>
     </head>
     <body>
         <div class="preLoad" unselect><h1>Loading</h1></div>
         <div class="cherry-blossom-container" id="cherryBlossomContainer"></div>
+
+        <div id="dynamicModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-image-placeholder" id="modalImageContainer">
+                    <img id="modalImage" src="" alt="Modal Image" loading="lazy">
+                </div>
+                <p id="modalText">Modal content</p>
+                <button class="modal-btn" id="closeBtn">Omkie!</button>
+            </div>
+        </div>
 
         <div class="floating-window">
 
@@ -89,7 +100,7 @@
 
                 <section class="int-games-cosplans-table">
                     <section class="int-games">
-                        <h1 class="header-2nd">Games I Play<span style="font-size: 2px;">(sometimes)</span></h1>
+                        <h1 class="header-2nd">Games<br><span style="font-size: 2px;">(I play sometimes)</span></h1>
                     </section>
 
                     <section class="int-cosplans">
@@ -121,24 +132,16 @@
                 <button class="button-base" id="donateBtn">Donate</button>
                 <button class="button-base" id="merchBtn">Merch</button>
             </div>
-
-            <div id="dynamicModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="modal-image-placeholder" id="modalImageContainer">
-                        <img id="modalImage" src="" alt="Modal Image" loading="lazy">
-                    </div>
-                    <p id="modalText">Modal content</p>
-                    <button class="modal-btn" id="closeBtn">Omkie!</button>
-                </div>
-            </div>
             
         </div>
 
         <p class="text-footer">All made by yours truly terrible coder with a passion on cosplaying lmao</p>
 
-        <script src="social-buttons.js" defer></script>
-        <script src="games-cosplans.js" defer></script>
-        <script src="modal.js" defer></script>
+        <script src="js/social-buttons.js" defer></script>
+        <script src="js/games-cosplans.js" defer></script>
+        <script src="js/modal.js" defer></script>
+        <script>
+            window.scrollBy(0, 1);
+        </script>
     </body>
 </html>

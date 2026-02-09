@@ -35,7 +35,11 @@ function closeModal() {
 
 // Event listeners for modal buttons
 contactBtn.addEventListener('click', function() {
-    openModal(modalImages[0], '<i>Currently busy and not available for collab yet hehe</i><br><br>If you have any inquiries, please email ichimakikasura@gmail.com', '50%', '120px');
+    openModal(modalImages[0], `
+        If you have any inquiries, please email <span style="color:black">ichimakikasura@gmail.com</span>
+        <br><br>
+        <span style="font-style:italic;font-size:14px;">Currently busy and not available for collab yet hehe</span>
+    `, '50%', '120px');
 });
 
 donateBtn.addEventListener('click', function() {

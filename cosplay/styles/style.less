@@ -1,11 +1,22 @@
 @font-face {
   font-family: 'DefaultFont';
-  src: url("./../font/UDDigiKyokashoN-R.ttc") format('truetype');
+  src: url("./../../font/UDDigiKyokashoN-R.ttc") format('truetype');
+}
+
+@keyframes floatInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 @media (max-width: 768px) {
     .floating-window {
-        padding: 24px;
+        padding: 19px;
         max-width: 90%;
 
         .introduction {
@@ -14,162 +25,112 @@
                     flex-direction: column;
 
                     .int-games, .int-cosplans {
-                        margin: 12px 0 !important;
+                        margin: 10px 0 !important;
                         width: 100%;
                     }
                 }
             }
 
             .header-2nd {
-                font-size: 26px;
+                font-size: 21px;
             }
         }
     }
 
-    .header { font-size: 19px; }
-    .paragraph { font-size: 10px; }
-    .text-placeholder { font-size: 16px; }
-
-    .social-buttons {
-        gap: 10px;
-
-        .social-btn {
-            width: 30px;
-            height: 30px;
-
-            img {
-                width: 22px;
-                height: 22px;
-            }
-        }
-    }
-}
-
-@media (max-width: 768px) and (min-width: 481px) {
-    .social-buttons {
-        .social-btn {
-            width: 22px !important;
-            height: 22px !important;
-
-            img {
-                width: 22px !important;
-                height: 22px !important;
-            }
-        }
-    }
+    .header { font-size: 15px; }
+    .paragraph { font-size: 8px; }
+    .text-placeholder { font-size: 13px; }
 }
 
 @media (max-width: 480px) {
     .floating-window {
-        padding: 16px;
+        padding: 13px;
         max-width: 95%;
 
         .introduction {
             section {
                 &.int-Introduction {
                     [pfp] {
-                        width: 120px;
-                        height: 120px;
+                        width: 96px;
+                        height: 96px;
                     }
 
                     .header {
-                        font-size: 26px;
-                        margin-bottom: 6px;
+                        font-size: 21px;
+                        margin-bottom: 5px;
                     }
 
                     .header2 {
-                        font-size: 13px;
+                        font-size: 10px;
                     }
                 }
 
                 &.int-games-cosplans-table {
                     flex-direction: column;
-                    margin-bottom: 24px;
+                    margin-bottom: 19px;
                     margin-left: auto;
                     margin-right: auto;
 
                     .int-games, .int-cosplans {
-                        margin: 8px auto;
+                        margin: 6px auto;
                         width: 100%;
-                        padding: 12px;
+                        padding: 10px;
                     }
 
                     .int-games {
                         img {
-                            height: 32px;
-                            margin: 8px;
+                            height: 26px;
+                            margin: 6px;
                         }
                     }
 
                     .int-cosplans {
                         h2 {
-                            font-size: 11px;
-                            margin-bottom: 6px;
+                            font-size: 9px;
+                            margin-bottom: 5px;
                         }
                     }
                 }
             }
 
             .header-2nd {
-                font-size: 14px;
-                margin-bottom: 6px;
+                font-size: 11px;
+                margin-bottom: 5px;
             }
         }
     }
 
     .header {
-        font-size: 16px;
-        margin-bottom: 6px;
+        font-size: 13px;
+        margin-bottom: 5px;
     }
 
     .paragraph {
-        font-size: 10px;
-        margin-bottom: 16px;
+        font-size: 8px;
+        margin-bottom: 13px;
     }
 
     .image-placeholder {
-        width: calc(100% + 32px);
-        margin: 0 -16px 12px;
+        width: calc(100% + 26px);
+        margin: 0 -13px 10px;
     }
 
     .text-placeholder {
-        font-size: 13px;
-        margin-bottom: 10px;
+        font-size: 10px;
+        margin-bottom: 8px;
     }
 
     .contact-button {
-        padding: 6px 10px;
-        font-size: 10px;
+        padding: 5px 8px;
+        font-size: 8px;
         max-width: 70%;
     }
 
-    .social-buttons {
-        gap: 10px;
-        margin-bottom: 32px;
-
-        .social-btn {
-            width: 22px !important;
-            height: 22px !important;
-            border-radius: 50%;
-            background: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: none;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
-    }
-
     .button-base {
-        padding: 8px 12px;
-        font-size: 10px;
+        padding: 6px 10px;
+        font-size: 8px;
         width: auto;
-        min-width: 64px;
+        min-width: 51px;
         text-align: center;
         display: inline-flex;
         align-items: center;
@@ -177,7 +138,7 @@
     }
 
     .buttons-container {
-        gap: 6px;
+        gap: 5px;
         flex-wrap: wrap;
     }
 }
@@ -219,7 +180,7 @@
 body {
     background-color: @bg-main;
     text-align: center;
-    min-height: 100vh;
+    // min-height: 100vh;
     position: relative;
     font-family: Arial, sans-serif;
 
@@ -227,7 +188,7 @@ body {
         content: '';
         position: fixed;
         inset: 0;
-        background: url('images/bg.jpg') center / cover fixed;
+        background: url('../images/bg.jpg') center / cover fixed;
         opacity: 0.2;
         z-index: -1;
     }
@@ -235,44 +196,45 @@ body {
 
 .floating-window {
     background-color: @window-bg;
-    border-radius: 24px;
-    padding: 32px;
-    max-width: 880px;
-    width: 90%;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 19px;
+    padding: 26px;
+    max-width: 720px;
+    width: 95%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     text-align: center;
     overflow: hidden;
-    margin: 32px auto 64px;
+    margin: 15px auto ;
+    animation: floatInUp 0.8s ease-out 1.4s both;
 
     .introduction {
         // margin-bottom: 50px;
 
         section {
             &.int-Introduction, &.int-games-cosplans-table {
-                margin-bottom: 40px;
+                margin-bottom: 32px;
             }
             
             &.int-games-cosplans-table{
                 display: flex;
 
                 .int-games, .int-cosplans {
-                    padding: 16px;
+                    padding: 13px;
                     width: 100%;
-                    margin: 16px;
+                    margin: 13px;
                     background-color: rgba(255, 192, 203, 0.5);
-                    border-radius: 16px;
-                    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+                    border-radius: 13px;
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
                 }
 
                 .int-games {
 
                     img {
                         height: 40px;
-                        margin: 12px;
-                        filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
-                        -webkit-filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+                        margin: 10px;
+                        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+                        -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
                         transition: transform 0.3s ease;
                     }
                     img:hover {
@@ -295,65 +257,65 @@ body {
         }
 
         [pfp] {
-            width: 200px;
-            height: 200px;
-            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
-            -webkit-filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+            width: 160px;
+            height: 160px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+            -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
         }
 
         .header {
-            font-size: 56px;
+            font-size: 45px;
             font-weight: bold;
             color: @text-dark;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            margin-bottom: 6px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         }
 
         .header2 {
             margin: auto;
             width: 80%;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
             color: @text-dark;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            margin-bottom: 6px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
             text-align: justify;
             text-justify: inter-word;
-            text-indent: 1.6em;
+            text-indent: 1.3em;
         }
 
         .header-2nd {
-            font-size: 40px;
+            font-size: 32px;
             font-weight: bold;
             color: @text-dark;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            margin-bottom: 6px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         }
 
         .paragraph {
-            font-size: 14px;
+            font-size: 11px;
             color: @text-gray;
             line-height: 1.6;
-            margin-bottom: 24px;
+            margin-bottom: 19px;
         }
     }
 }
 
 .text-placeholder {
-    font-size: 16px;
+    font-size: 13px;
     color: @text-dark;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1.5;
 }
 
 .button-base {
     background-color: @primary;
-    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 6px 13px;
+    border-radius: 3px;
     cursor: pointer;
-    font-size: 11px;
+    font-size: 9px;
     transition: background-color 0.3s ease;
     text-decoration: none;
     width: 20%;
@@ -370,21 +332,21 @@ body {
 .buttons-container {
     display: flex;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 13px;
+    margin-bottom: 19px;
     align-items: center;
 }
 
 .social-buttons {
     display: flex;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 40px;
+    gap: 13px;
+    margin-bottom: 32px;
 
     .social-btn {
-        box-shadow: 0 0px 4px black;
-        width: 40px;
-        height: 40px;
+        box-shadow: 0 0px 3px black;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
         background: transparent;
         display: flex;
@@ -395,8 +357,8 @@ body {
         transition: transform 0.3s ease;
 
         img {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
         }
 
         &:hover {
@@ -407,8 +369,8 @@ body {
 
 .text-footer {
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 16px;
-    font-size: 12px;
+    margin-bottom: 13px;
+    font-size: 10px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
 }

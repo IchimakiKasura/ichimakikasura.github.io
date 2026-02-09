@@ -67,7 +67,7 @@ function initGames() {
 
 function initCosplans() {
     const cosplansContainer = document.querySelector('.int-cosplans');
-    const existingHeaders = cosplansContainer.querySelectorAll('h2');
+    const existingHeaders = cosplansContainer.querySelectorAll('h5');
     existingHeaders.forEach(header => header.remove());
     
     cosplansData.forEach(cosplan => {
