@@ -27,25 +27,29 @@ const gamesData = [
 
 const cosplansData = [
     {
-        name: 'Clove',
-        source: 'Valorant'
+        name: 'Hiatus',
+        source: ''
     },
-    {
-        name: 'Frieren',
-        source: 'Sousou no Frieren'
-    },
-    {
-        name: 'Megumin',
-        source: 'KonoSuba'
-    },
-    {
-        name: 'Furina',
-        source: 'Genshin Impact [redo]'
-    },
-    {
-        name: 'Najimi osana',
-        source: 'Komi Can\'t Communicate'
-    }
+    // {
+    //     name: 'Clove',
+    //     source: 'Valorant'
+    // },
+    // {
+    //     name: 'Frieren',
+    //     source: 'Sousou no Frieren'
+    // },
+    // {
+    //     name: 'Megumin',
+    //     source: 'KonoSuba'
+    // },
+    // {
+    //     name: 'Furina',
+    //     source: 'Genshin Impact [redo]'
+    // },
+    // {
+    //     name: 'Najimi osana',
+    //     source: 'Komi Can\'t Communicate'
+    // }
 ];
 
 function initGames() {

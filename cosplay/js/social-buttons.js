@@ -42,6 +42,13 @@ const Socials = [
         selector: 'portfolio',
         borderRadius: '50%'
     },
+    // {
+    //     url: 'https://paypal.me/*',
+    //     label: 'Paypal',
+    //     image: 'images/paypal.webp',
+    //     selector: 'paypal',
+    //     borderRadius: '10%'
+    // },
     // Removed prank lmao idfk
     // {
     //     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ',

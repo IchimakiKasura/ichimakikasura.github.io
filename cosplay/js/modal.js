@@ -7,7 +7,7 @@ const closeSpan = document.querySelector('.close');
 const modalImageContainer = document.getElementById('modalImageContainer');
 const modalImage = document.getElementById('modalImage');
 const modalText = document.getElementById('modalText');
-const modalImages = ['images/woah.jpg', 'images/gcash.png', 'images/woah2.jpg'];
+const modalImages = ['images/woah.jpg', 'images/shopeepay.png', 'images/woah2.jpg'];
 
 modalImages.forEach(src => {
     const img = new Image();
