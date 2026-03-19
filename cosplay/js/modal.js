@@ -17,6 +17,7 @@ modalImages.forEach(src => {
 function openModal(imageUrl, text, borderRadius = '50%', imageSize = '120px') {
     if (imageUrl) {
         modalImage.src = imageUrl;
+        
         modalImageContainer.style.borderRadius = borderRadius;
         modalImage.style.borderRadius = borderRadius;
         modalImageContainer.style.width = imageSize;

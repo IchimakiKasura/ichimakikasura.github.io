@@ -22,9 +22,8 @@ function openModal(imageUrl, text, borderRadius = '50%', imageSize = '120px') {
         modalImageContainer.style.width = imageSize;
         modalImageContainer.style.height = imageSize;
         modalImageContainer.style.display = 'flex';
-    } else {
-        modalImageContainer.style.display = 'none';
-    }
+    } else modalImageContainer.style.display = 'none';
+
     modalText.innerHTML = text;
     dynamicModal.style.display = 'block';
 }
@@ -33,22 +32,13 @@ function closeModal() {
     dynamicModal.style.display = 'none';
 }
 
-contactBtn.addEventListener('click', function() {
-    openModal(modalImages[0], '<i>Currently busy and not available for collab yet hehe</i><br><br>If you have any inquiries, please email ichimakikasura@gmail.com', '50%', '120px');
-});
-
-donateBtn.addEventListener('click', function() {
-    openModal(modalImages[1], 'Support my cosplay journey! Any donations are greatly appreciated! ❤️', '10px', '300px');
-});
-
-merchBtn.addEventListener('click', function() {
-    openModal(modalImages[2], 'Coscards are on the way :>', '50%', '120px');
-});
-
+contactBtn.addEventListener('click', () => openModal(modalImages[0], '<i>Currently busy and not available for collab yet hehe</i><br><br>If you have any inquiries, please email ichimakikasura@gmail.com', '50%', '120px'));
+donateBtn.addEventListener('click', () => openModal(modalImages[1], 'Support my cosplay journey! Any donations are greatly appreciated! ❤️', '10px', '300px'));
+merchBtn.addEventListener('click', () => openModal(modalImages[2], 'Coscards are on the way :>', '50%', '120px'));
 closeBtn.addEventListener('click', closeModal);
 closeSpan.addEventListener('click', closeModal);
 
-window.addEventListener('click', function(event) {
+window.addEventListener('click', (event) => {
     if (event.target === dynamicModal) {
         closeModal();
     }
