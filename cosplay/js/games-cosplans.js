@@ -50,6 +50,10 @@ const Datas = [
         {
             src: 'images/cosplans/najimi.jpg',
             alt: 'Najimi Osana'
+        },
+        {
+            src: 'images/cosplans/ellen.jpg',
+            alt: 'Ellen Joe'
         }
     ]
 ]
