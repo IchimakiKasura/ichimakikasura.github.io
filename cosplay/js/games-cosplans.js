@@ -27,34 +27,30 @@ const Datas = [
     ],
     [
         // {
-        //     name: 'Hiatus',
-        //     source: ''
+        //     src: 'images/cosplans/clove.jpg',
+        //     alt: 'Clove'
         // },
-        {
-            src: 'images/cosplans/clove.jpg',
-            alt: 'Clove'
-        },
-        {
-            src: 'images/cosplans/frieren.jpg',
-            alt: 'Frieren'
-        },
-        {
-            src: 'images/cosplans/megumin.jpg',
-            alt: 'Megumin'
-        },
-        {
-            src: 'images/cosplans/furina.jpg ',
-            alt: 'Furina',
-            title: 'Furina (redo)'
-        },
-        {
-            src: 'images/cosplans/najimi.jpg',
-            alt: 'Najimi Osana'
-        },
-        {
-            src: 'images/cosplans/ellen.jpg',
-            alt: 'Ellen Joe'
-        }
+        // {
+        //     src: 'images/cosplans/frieren.jpg',
+        //     alt: 'Frieren'
+        // },
+        // {
+        //     src: 'images/cosplans/megumin.jpg',
+        //     alt: 'Megumin'
+        // },
+        // {
+        //     src: 'images/cosplans/furina.jpg ',
+        //     alt: 'Furina',
+        //     title: 'Furina (redo)'
+        // },
+        // {
+        //     src: 'images/cosplans/najimi.jpg',
+        //     alt: 'Najimi Osana'
+        // },
+        // {
+        //     src: 'images/cosplans/ellen.jpg',
+        //     alt: 'Ellen Joe'
+        // }
     ]
 ]
 
