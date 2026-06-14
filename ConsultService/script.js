@@ -54,8 +54,24 @@ const feedbacks = [
     }
 ];
 
+const images = [
+    "product_1_1.jpg",
+    "product_1_2.jpg",
+    "product_2.jpg",
+    "product_3_first.jpg",
+    "product_3_cleaned.jpg",
+    "product_4.jpg",
+    "product_5_1.jpg",
+    "product_5_2.jpg",
+    "product_6.png",
+    "product_7_1.png",
+    "product_7_2.jpg",
+    "product_7_3.jpg",
+]
+
 const projectsContainer = document.getElementById("projectsContainer");
 const feedbackContainer = document.getElementById("feedbackContainer");
+const galleryContainer = document.getElementById("galleryContainer");
 
 projects.forEach(project => {
 
@@ -94,3 +110,16 @@ feedbacks.forEach(feedback => {
 
     feedbackContainer.appendChild(card);
 });
+
+images.forEach(image => {
+    galleryContainer.innerHTML += `<img src="img/gallery/${image}"/ onclick="picturePreview(this)">`;
+});
+
+function picturePreview(x) {
+    document.querySelector(".image_preview").style.display = 'flex';
+    document.querySelector("#preview_img_placeholder").src = x.src;
+}
+
+function closePreview() {
+    document.querySelector(".image_preview").style.display = 'none';
+}
