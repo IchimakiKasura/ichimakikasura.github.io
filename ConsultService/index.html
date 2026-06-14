@@ -73,6 +73,8 @@
 
                     <p style="padding-top: 200px;">
                         Embedded systems development using Arduino, ESP32, and Raspberry Pi for student projects, prototypes, and basic IoT systems.
+                        <br><br>
+                        <span style="font-style: italic;">Starting price is ₱75<sup>*</sup></span>
                     </p>
                 </div>
                 <img src="img/arduino.webp" alt="bg">
@@ -83,7 +85,7 @@
                 <p class="section-subtitle">Background and technical focus</p>
                 <div class="about-card">
                     <p>
-                        Self-taught embedded systems developer focused on Arduino, ESP32, and basic IoT projects.
+                        Self-taught embedded systems developer with 2 Years Experience, focused on Arduino, ESP32, and basic IoT projects.
                         Builds functional prototypes for school requirements, experimentation, and practical learning.
                         <br>
                         Experience includes sensors, displays (LCD/TFT), RTC modules, and WiFi-based ESP32 systems. I build functional prototypes for learning, school projects, and experimentation.
@@ -146,12 +148,61 @@
                     prototype development, ESP32 projects,
                     and troubleshooting.
                 </p>
-
-                <p class="section-subtitle">⚠️ PCB and 3D Modelling are temporarily unavailable.</p>
                 
-                <a href="https://forms.gle/zGP3TdMsDFPCPR377" target="_blank" class="btn">
-                    Send Request
-                </a>
+                <form id="project-form">
+
+                    <h3>What type of project are you willing to make?</h3>
+                    <input
+                        type="text"
+                        name="project"
+                        placeholder="ex: A simple garbage separator project/prototype, etc..."
+                        required>
+
+                    <h3>Explain how it should work and its use cases?</h3>
+                    <textarea
+                        name="description"
+                        placeholder="ex: If the user throws a trash, the system will detect whether its plastic or not and a motor will spin to direct the trash to its rightful can etc..."
+                        required></textarea>
+
+                    <h3>What are the materials/components do you think it will require?</h3>
+                    <textarea
+                        name="materials"
+                        placeholder="ex: ESP-32 Cam, ToF or Ultra Sonic Sensor, Servo motor etc..."
+                        required></textarea>
+
+                    <h3>Questions</h3>
+                    <textarea
+                        name="questions"
+                        placeholder="(Optional)"></textarea>
+
+                    <h3>Contact</h3>
+                    <input
+                        type="text"
+                        name="contact"
+                        placeholder="Facebook profile/link"
+                        required>
+
+                    <select name="pricing" required>
+                        <option value="">Select Service</option>
+                        <option value="₱150 Quick Discussion">Quick Discussion</option>
+                        <option value="₱250 Initial Discussion">Initial Discussion</option>
+                        <option value="₱500 Full Consultation">Full Consultation</option>
+                    </select>
+
+                    <a class="btn" target="_blank" href="Agreement.html">Read the Agreement</a>
+
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        I've read the agreement and Agreed with the following.
+                    </label>
+
+                    <button type="submit" class="btn" target="_blank">Create Request</button>
+
+                    <p class="section-subtitle">
+                        You will be redirected to a Google Form pre-filled. <br>
+                        ⚠️ PCB and 3D Modelling are temporarily unavailable.
+                    </p>
+                </form>
 
             </section>
 

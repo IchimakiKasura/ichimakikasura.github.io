@@ -123,3 +123,33 @@ function picturePreview(x) {
 function closePreview() {
     document.querySelector(".image_preview").style.display = 'none';
 }
+// https://docs.google.com/forms/d/e/1FAIpQLSfP0Pzz4AhaIdLq2dGtfGZ13PHlhrh0EbpQT3sHi0l9eLk1Ew/
+// viewform?usp=pp_url&
+// entry.1000057=What+type+of+project+are+you+willing+to+make?&
+// entry.1000027=Explain+how+it+should+work+and+its+use+cases?&
+// entry.967112212=What+are+the+materials/components+do+you+think+it+will+require?&
+// entry.131837172=Questions&
+// entry.2055232012=%E2%82%B1500+Full+Consultation&
+// entry.821966844=Contact+*&entry.1000020=Skip&
+// entry.1000026=Skip&
+// entry.1668764543=I+Agree
+document.getElementById("project-form").addEventListener("submit", e => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    let data = "https://docs.google.com/forms/d/e/1FAIpQLSfP0Pzz4AhaIdLq2dGtfGZ13PHlhrh0EbpQT3sHi0l9eLk1Ew/viewform?usp=pp_url&"
+
+    data += `entry.1000057=${encodeURIComponent(form.project.value)}&`;
+    data += `entry.1000027=${encodeURIComponent(form.description.value)}&`;
+    data += `entry.967112212=${encodeURIComponent(form.materials.value)}&`;
+    data += `entry.131837172=${encodeURIComponent(form.questions.value)}&`;
+    data += `entry.2055232012=${encodeURIComponent(form.pricing.value)}&`;
+    data += `entry.821966844=${encodeURIComponent(form.contact.value)}&`;
+
+    data += "entry.1000020=Skip&";
+    data += "entry.1000026=Skip&";
+    data += "entry.1668764543=I+Agree&";
+
+    window.open(data);
+});
