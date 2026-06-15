@@ -1,3 +1,5 @@
+"use strict";
+
 const projects = [
     {
         title: "Energy Meter",
@@ -152,4 +154,14 @@ document.getElementById("project-form").addEventListener("submit", e => {
     data += "entry.1668764543=I+Agree&";
 
     window.open(data);
+});
+
+document.querySelectorAll("[svgButton]").forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+        switch(btn.getAttribute("social")) {
+            case "dc": window.open("https://discord.com/users/1515722036209520940"); break;
+            case "gh": window.open("https://github.com/IchimakiKasura"); break;
+            case "fb": window.open("https://www.facebook.com/Iyori563"); break;
+        }
+    });
 });

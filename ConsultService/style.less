@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 
   scrollbar-width: 8px;
   scrollbar-color: #38bdf8 #0f172a;
@@ -166,7 +166,8 @@ nav {
 section {
   padding: 80px 0;
 
-  &#about, &#projects {
+  &#about,
+  &#projects {
     padding: 0 0 80px;
   }
 
@@ -194,7 +195,7 @@ section {
 .about {
   .about-card {
     background: @card;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 18px;
     padding: 25px;
 
@@ -203,7 +204,7 @@ section {
       line-height: 1.6;
       margin-bottom: 15px;
     }
-    
+
     .skills {
       margin-top: 10px;
       cursor: default;
@@ -282,10 +283,11 @@ section {
   }
 }
 
-.card, .testimonial {
+.card,
+.testimonial {
   width: 350px;
   background: @card;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 18px;
   padding: 25px;
   transition: 0.25s;
@@ -330,7 +332,6 @@ section {
 }
 
 .testimonial {
-
   .quote {
     color: @muted;
   }
@@ -371,27 +372,27 @@ section {
       width: 80%;
       padding: 14px 16px;
       background: @card;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
       color: @text;
       font: inherit;
-  
+
       &:focus {
         outline: none;
         border-color: @primary;
         box-shadow: 0 0 0 3px fade(@primary, 15%);
       }
     }
-  
+
     textarea {
       min-height: 140px;
       resize: vertical;
     }
-  
+
     select {
       cursor: pointer;
     }
-  
+
     .checkbox {
       display: flex;
       align-items: flex-start;
@@ -399,13 +400,13 @@ section {
       color: @muted;
       font-size: 0.95rem;
       user-select: none;
-  
+
       input {
         width: auto;
         margin-top: 3px;
       }
     }
-  
+
     button {
       // align-self: flex-start;
       padding: 14px 24px;
@@ -415,19 +416,27 @@ section {
       font-weight: 600;
       cursor: pointer;
       transition: 0.2s;
-  
+
       &:hover {
         transform: translateY(-2px);
       }
     }
   }
-
 }
 
 footer {
   text-align: center;
   color: #64748b;
   padding: 30px;
+
+  svg[svgButton] {
+    margin: -10px 10px -10px 10px;
+    &:hover {
+      cursor: pointer;
+      filter: drop-shadow(0px 2px 5px @primary);
+      -webkit-filter: drop-shadow(0px 2px 5px @primary);
+    }
+  }
 }
 
 @media (max-width: 768px) {
