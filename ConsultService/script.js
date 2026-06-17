@@ -135,7 +135,7 @@ function closePreview() {
 // entry.821966844=Contact+*&entry.1000020=Skip&
 // entry.1000026=Skip&
 // entry.1668764543=I+Agree
-document.getElementById("project-form").addEventListener("submit", e => {
+document.getElementById("request-form").addEventListener("submit", e => {
     e.preventDefault();
 
     const form = e.target;
@@ -165,3 +165,10 @@ document.querySelectorAll("[svgButton]").forEach(btn=>{
         }
     });
 });
+
+function agreement(x){
+    if(x.checked)
+        document.getElementById("submit_form").removeAttribute("disabled");
+    else
+        document.getElementById("submit_form").setAttribute("disabled", '');
+}

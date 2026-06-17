@@ -105,7 +105,7 @@ nav {
   a {
     color: #cbd5e1;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 10px;
 
     &:hover {
       color: @primary;
@@ -123,7 +123,7 @@ nav {
     max-width: 700px;
 
     h1 {
-      font-size: 4rem;
+      font-size: clamp(2.4rem, 3.5vw, 4.5rem);
       line-height: 1.1;
       margin-bottom: 20px;
     }
@@ -156,10 +156,17 @@ nav {
   border-radius: 12px;
   font-weight: 600;
   transition: 0.2s ease;
+  user-select: none;
 
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px 1px @primary;
+  }
+
+  &:disabled {
+    background-color: #0c2936;
+    pointer-events: none;
+    cursor: not-allowed;
   }
 }
 
@@ -186,10 +193,9 @@ section {
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
 }
 
 .about {
@@ -242,9 +248,11 @@ section {
 }
 
 .galleries {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   align-items: center;
-  justify-items: start;
 
   img {
     border-radius: 10px;
@@ -285,7 +293,8 @@ section {
 
 .card,
 .testimonial {
-  width: 350px;
+  width: 100%;
+
   background: @card;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 18px;
@@ -365,19 +374,36 @@ section {
     gap: 15px;
     margin-top: 30px;
 
-    input,
-    textarea,
-    select {
-      margin-bottom: 20px;
+    .request-section {
+      display: grid;
+      grid-template-columns: 40% 73%;
+      align-content: center;
+      gap: 15px;
+      border: 2px solid @card;
+      border-radius: 10px;
+      padding: 15px;
+
+      h3 {
+        text-align: justify;
+        padding: 0;
+        margin-top: 10px;
+        
+      }
+    }
+
+    input, textarea, select {
       width: 80%;
       padding: 14px 16px;
+      
       background: @card;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
       color: @text;
       font: inherit;
+      
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: all 0.2s ease;
 
-      &:focus {
+      &:focus-visible {
         outline: none;
         border-color: @primary;
         box-shadow: 0 0 0 3px fade(@primary, 15%);
@@ -391,6 +417,47 @@ section {
 
     select {
       cursor: pointer;
+
+      &, &::picker(select) {
+        appearance: base-select;
+      }
+      
+      &::picker(select) {
+        background: @card;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 8px;
+        transform-origin: top center; 
+        transition: display 0.5s allow-discrete, overlay 0.5s allow-discrete;
+        animation: slideUpClose 0.18s ease-in forwards;
+        @starting-style {
+          transform: translateY(-10px) scaleY(0.95);
+          opacity: 0;
+        }
+      }
+
+      &:open::picker(select) {
+        animation: slideDownOpen 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      option {
+        display: flexbox;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 10px 14px;
+        border-radius: 8px;
+        color: @text;
+        position: relative; 
+
+        &::after {
+          content: attr(data-price);
+          position: absolute;
+          font-style: italic;
+          font-size: 0.85em;
+          opacity: 0.5;
+          right: 14px;
+        }
+      }
     }
 
     .checkbox {
@@ -443,13 +510,31 @@ footer {
   nav {
     flex-direction: column;
     gap: 15px;
+
+    [title] {
+      margin: -10px 0 0 0 !important;
+    }
   }
 
-  .hero {
-    .hero-content {
-      h1 {
-        font-size: 2.5rem;
-      }
-    }
+}
+
+@keyframes slideDownOpen {
+  0% {
+    transform: translateY(-10px) scaleY(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes slideUpClose {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-8px) scaleY(0.95);
+    opacity: 0;
   }
 }
