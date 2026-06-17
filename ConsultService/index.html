@@ -35,6 +35,16 @@
     
     <body>
 
+        <!-- PREVENTS WHITE BG DUE TO LESS LOADING. IM LAZY TO BAKE IT -->
+        <div load style="
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0f172a;
+            z-index: 99;"></div>
+
         <div class="image_preview" onclick ="closePreview()">
             <button onclick ="closePreview()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 48 48">
@@ -50,10 +60,10 @@
             <nav>
                 <div style="margin-right: 25vw;" title>Embedded System Prototype Service</div>
                 <div>
-                    <a href="index.html#projects">Projects</a>
-                    <a href="index.html#feedback">Feedback</a>
-                    <a href="index.html#gallery">Gallery</a>
-                    <a href="index.html#contact">Request</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#feedback">Feedback</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Request</a>
                 </div>
             </nav>
 
@@ -73,7 +83,7 @@
                     <p style="padding-top: clamp(100px, 10vw, 200px);">
                         Embedded systems development using Arduino, ESP32, and Raspberry Pi for student projects, prototypes, and basic IoT systems.
                         <br><br>
-                        <span style="font-style: italic;">Starting price is ₱125<sup>*</sup></span>
+                        <span style="font-style: italic;">Starting price is ₱175<sup>*</sup></span>
                     </p>
                 </div>
                 <img src="img/arduino.webp" alt="bg">
@@ -85,9 +95,7 @@
                 <div class="about-card">
                     <p>
                         Self-taught embedded system developer focused on Arduino, ESP32, and basic IoT projects.
-                        <br>
                         Builds functional prototypes for school thesis, defense, experimentation, and practical learning.
-                        <br>
                         Experience includes sensors, displays (LCD/TFT), RTC modules, and WiFi-based ESP32 systems.
                         <br><br>
                         Participated in a workshop assisting students training on Arduino-based projects.
@@ -182,23 +190,35 @@
                             required>
                     </div>
 
-                    <select name="pricing" required>
-                        <option hidden>Select Service</option>
-                        <option value="₱150 Quick Discussion"
+                    <select name="pricing_rate" required>
+                        <option hidden>Project Consultation & Build Rates</option>
+                        <option value="Quick Discussion"
                                 data-price="Partial is unavailable">
                                 Quick Discussion
                             </option>
-                        <option value="₱250 Initial Discussion"
-                                data-price="starts at ₱125*">
+                        <option value="Initial Discussion"
+                                data-price="starts at ₱175*">
                                 Initial Discussion
                             </option>
-                        <option value="₱500 Full Consultation"
-                                data-price="starts at ₱250*">
+                        <option value="Full Consultation"
+                                data-price="starts at ₱300*">
                                 Full Consultation
                             </option>
                     </select>
 
-                    <button class="btn" target="_blank" onclick="window.open('Agreement.html')" type="button">Read the Agreement</button>
+                    <select name="pricing_addon" required>
+                        <option hidden>Assembly Addons</option>
+                        <option value="Full Prototype Build"
+                                data-price="Standard rate ₱1,500*">
+                                Full Prototype Build
+                            </option>
+                        <option value="Hardware-Only Build"
+                                data-price="₱850">
+                                Hardware-Only Build
+                            </option>
+                    </select>
+
+                    <button class="btn" target="_blank" onclick="window.location.href='Agreement.html'" type="button">Read the Agreement</button>
 
                     <label class="checkbox">
                         <input type="checkbox" required onclick="agreement(this)">
@@ -234,6 +254,7 @@
         </div>
 
         <script src="script.js"></script>
+        <script src="cookie.js"></script>
 
     </body>
 </html>
