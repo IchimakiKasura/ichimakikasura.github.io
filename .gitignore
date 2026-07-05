@@ -1,0 +1,22 @@
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+dist
+node_modules
+eme
+beta 5.rar
+
+# removed as it can be build later on
+src/js/*.js
+
+# browser-side env
+ts/env.ts
+
+#unused
+api
+.env.examople
+wrangler.json

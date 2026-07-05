@@ -1,0 +1,96 @@
+footer {
+    background: var(--bg-footer);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 15% 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    box-sizing: border-box;
+}
+
+footer > div {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+footer > div {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer-left {
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+}
+
+.footer-left svg {
+    cursor: pointer;;
+}
+
+.footer-right {
+    display: inline-flex;
+    align-items: center;
+    justify-content: right;
+}
+
+footer h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.8rem;
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 640px) {
+    footer {
+        display: block;
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+
+    footer > div {
+        gap: 0.6rem;
+        width: 100%;
+    }
+
+    .footer-left {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .footer-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+    }
+}

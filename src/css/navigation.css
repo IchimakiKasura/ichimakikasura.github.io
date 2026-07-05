@@ -1,0 +1,133 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 64px;
+  background-color: var(--bg-nav);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.nav-brand img {
+  height: 42px;
+  width: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px black;
+  cursor: pointer;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 10px 16px;
+  transition: all 0.2s ease;
+  border-radius: 5px;
+  text-shadow: 0 0 5px rgba(0,0,0, 0.7);
+}
+nav a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 900px) {
+  nav {
+    justify-content: center;
+    position: fixed;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+  }
+
+  .nav-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-nav);
+    padding: 0 1rem 0;
+    z-index: 2;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.3s ease, padding 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  nav.open .nav-links {
+    max-height: 260px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 0.5rem 1rem 1rem;
+    pointer-events: auto;
+  }
+
+  nav.open {
+    padding-bottom: 0.5rem;
+  }
+
+  nav.open .nav-brand {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-links a {
+    width: 100%;
+    margin: 0;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  nav.open .nav-links a {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s ease;
+  }
+}
