@@ -60,7 +60,8 @@ const data: projectData[] = [
         title: "💖 IC-TAP",
         sub: "School project | Game Development | Adobe Animate",
         desc: "A Flappy Bird-inspired Android game created in Adobe Animate with an endless gameplay with a scaling difficulty. Made for school project performance task.\n\n Made in 2025",
-        img: "/images/projects/IC-TAP.png"
+        img: "/images/projects/IC-TAP.png",
+        link: "/downloadables/ICTAP.apk"
     },
     {
         title: "Erisu-Corner",
