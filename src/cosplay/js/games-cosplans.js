@@ -1,27 +1,27 @@
 const Datas = [
     [
         {
-            src: '/images/games/gi.png',
+            src: 'images/games/gi.png',
             alt: 'Genshin Impact'
         },
         {
-            src: '/images/games/zzz.png',
+            src: 'images/games/zzz.png',
             alt: 'Zenless Zone Zero'
         },
         {
-            src: '/images/games/cs2.png',
+            src: 'images/games/cs2.png',
             alt: 'Counter Strike 2'
         },
         {
-            src: '/images/games/val.png',
+            src: 'images/games/val.png',
             alt: 'Valorant'
         },
         {
-            src: '/images/games/mc.png',
+            src: 'images/games/mc.png',
             alt: 'Minecraft'
         },
         {
-            src: '/images/games/lol.png',
+            src: 'images/games/lol.png',
             alt: 'League of Legends'
         }
     ],
