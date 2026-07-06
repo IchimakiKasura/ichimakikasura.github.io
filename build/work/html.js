@@ -47,13 +47,13 @@ function rewriteHTML(html, rel) {
 
     log(rel, `Rewriting *.css > *.min.css`);
     html = html.replace(regex.linkMinify, (_, a, file, b) => {
-        if (file.endsWith('.min')) return _ ;
+        if (file.endsWith('.min') || file.endsWith('.mini')) return _ ;
         return `${a}${file}.min.css${b}`; 
     });
 
     log(rel, `Rewriting *.js > *.min.js`);
     html = html.replace(regex.scriptMinify, (_, a, file, b) => {
-        if (file.endsWith('.min')) return _ ;
+        if (file.endsWith('.min') || file.endsWith('.mini')) return _ ;
         return `${a}${file}.min.js${b}`;
     });
 
