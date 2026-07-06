@@ -1,0 +1,21 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+
+    "name": "localserver",
+    "main": "api/worker.js",
+    "compatibility_date": "2026-06-18",
+
+    "assets": {
+        "directory": "dist/",
+        "not_found_handling": "404-page",
+        "run_worker_first": ["/api/*"]
+    },
+
+    "observability": {
+        "enabled": true
+    },
+
+    "dev": {
+        "port": 5500
+    },
+}

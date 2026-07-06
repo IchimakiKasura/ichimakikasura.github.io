@@ -1,3 +1,4 @@
+/* Let say root */
 .section-img {
   z-index: -1;
   opacity: 1;
@@ -10,7 +11,6 @@
   filter: drop-shadow(5px 5px 5px #222);
   transition: opacity 0.5s ease;
 }
-
 section,
 header {
   min-height: 100vh;
@@ -22,56 +22,31 @@ header {
   justify-content: center;
   isolation: isolate;
 }
-
-@keyframes navDropIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes heroImageFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-section {
-  padding: calc(70px + 64px) 15% 60px;
-}
-
-header {
-  padding: 100px 15% 60px;
-}
-
 section > *,
 header > * {
   position: relative;
   z-index: 1;
 }
+section {
+  padding: calc(70px + 64px) 15% 60px;
+}
+header {
+  padding: 100px 15% 60px;
+}
 section h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+}
+#about {
+  background-color: var(--bg-about);
+  background-size: cover;
+}
+#projects {
+  background-color: var(--bg-projects);
+  box-shadow: 0 -25px 20px -20px var(--bg-projects);
+}
+#contact {
+  box-shadow: 0 -25px 20px -20px var(--bg-footer);
 }
 
 /* main shit */
@@ -79,10 +54,6 @@ section h2 {
   text-align: left;
   position: relative;
   overflow: visible;
-}
-
-.main-nav {
-  animation: navDropIn 0.7s ease-out both;
 }
 .hero-content {
   display: flex;
@@ -128,17 +99,12 @@ section h2 {
   transition: opacity 0.7s ease, transform 0.7s ease;
   will-change: opacity, transform;
 }
-
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* about sht */
-.about {
-  padding: calc(70px + 64px) 15% 0;
-  text-align:center;
-}
 .about hr {
   border: 1px solid var(--ctx-hr);
   margin: 20px 0;
@@ -202,7 +168,7 @@ section h2 {
 .gallery-btn:hover {
   transform: translateY(-2px);
 }
-.lower { 
+.lower {
   margin-top: 20px;
   color: var(--text-dark-muted);
   text-align: justify;
@@ -214,7 +180,6 @@ section h2 {
   width: 100%;
 }
 
-
 /* project sht */
 .project-grid {
   display: grid;
@@ -222,7 +187,6 @@ section h2 {
   gap: 2rem;
   z-index: 1;
 }
-
 .project-list {
   display: flex;
   flex-direction: column;
@@ -247,7 +211,6 @@ section h2 {
   text-shadow: 0 0 5px black;
   padding-bottom: 10px;
 }
-
 .preview-box {
   background: var(--bg-footer);
   border-radius: 15px;
@@ -271,20 +234,10 @@ section h2 {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
-
-#about {
-  background-color: var(--bg-about);
-  box-shadow: 0 -25px 20px -20px var(--bg-about);
-}
-
-#projects {
-  background-color: var(--bg-projects);
-  box-shadow: 0 -25px 20px -20px var(--bg-projects);
-}
-
-#contact {
-  box-shadow: 0 -25px 20px -20px var(--bg-footer);
+#p-img {
+  background-image: url('/images/astolfo.png');
+  background-size: cover;
+  background-position: 0 -10px;
 }
 
 
@@ -293,7 +246,6 @@ section h2 {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media (max-width: 1100px) {
   .hero-content {
     gap: 1.5rem;
@@ -303,7 +255,6 @@ section h2 {
     width: min(30vw, 320px);
   }
 }
-
 @media (max-width: 900px) {
   section {
     padding: calc(80px + 64px) 7% 60px;
@@ -369,7 +320,6 @@ section h2 {
     width: 100%;
   }
 }
-
 @media (max-width: 640px) {
   section {
     padding: calc(80px + 64px) 5% 60px;
@@ -402,5 +352,36 @@ section h2 {
 
   .preview-box img {
     height: 220px;
+  }
+}
+
+@keyframes navDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes heroImageFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

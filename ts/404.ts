@@ -16,7 +16,6 @@
             (entries: IntersectionObserverEntry[], obs: IntersectionObserver) => {
                 entries.forEach((entry: IntersectionObserverEntry) => {
                     if (entry.isIntersecting) {
-                        // Cast Element to HTMLElement to ensure compatibility if needed
                         const target = entry.target as HTMLElement;
                         const delay: number = Number(target.getAttribute('data-delay') || 0);
                         

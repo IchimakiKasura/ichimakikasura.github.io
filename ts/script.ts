@@ -114,20 +114,18 @@ const data: projectData[] = [
     },
 ];
 
-const previewTitle = document.getElementById("p-title") as HTMLHeadingElement;
-const previewSubtitle = document.getElementById("p-desc") as HTMLParagraphElement;
-const previewImage = document.getElementById("p-img") as HTMLImageElement;
-const teachingImage = document.getElementById("teaching-image") as HTMLImageElement | null;
-const teachingCounter = document.getElementById("teaching-counter") as HTMLSpanElement | null;
-const galleryButtons = document.querySelectorAll(".gallery-btn") as NodeListOf<HTMLButtonElement>;
-const nav = document.querySelector(".main-nav") as HTMLElement | null;
-const menuToggle = document.querySelector(".menu-toggle") as HTMLButtonElement | null;
-const navLinks = document.querySelectorAll(".nav-links a") as NodeListOf<HTMLAnchorElement>;
-const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
-const teachingImages = Array.from({ length: 6 }, (_, index) => `/images/workshop/${index + 1}.webp`);
-const loadedPreviewImages = new Set<string>();
-let teachingIndex = 0;
-let activePreviewRequest = 0;
+const previewTitle                      = document.getElementById("p-title") as HTMLHeadingElement;
+const previewSubtitle                   = document.getElementById("p-desc") as HTMLParagraphElement;
+const previewImage                      = document.getElementById("p-img") as HTMLImageElement;
+const teachingImage                     = document.getElementById("teaching-image") as HTMLImageElement | null;
+const teachingCounter                   = document.getElementById("teaching-counter") as HTMLSpanElement | null;
+const galleryButtons                    = document.querySelectorAll(".gallery-btn") as NodeListOf<HTMLButtonElement>;
+const revealElements                    = document.querySelectorAll<HTMLElement>(".reveal");
+const teachingImages                    = Array.from({ length: 6 }, (_, index) => `/images/workshop/${index + 1}.webp`);
+const loadedPreviewImages               = new Set<string>();
+let activeProjectIndex: number | null   = null;
+let teachingIndex                       = 0;
+let activePreviewRequest                = 0;
 
 function loadPreviewImage(src: string) {
     if (!previewImage || !src) return;
@@ -170,16 +168,17 @@ document.querySelectorAll<HTMLElement>("[data-social]").forEach((btn) => {
         const platform = btn.dataset.social;
 
         if (platform && SOCIAL_LINKS[platform]) {
-            if(platform == 'gm') {
+            if (platform == 'gm')
                 window.location.href = SOCIAL_LINKS[platform];
-            } else window.open(SOCIAL_LINKS[platform]);
+            else
+                window.open(SOCIAL_LINKS[platform]);
         }
     });
 });
 
 function createProject(index: number) {
-    const projectItem = document.createElement("div");
-    const projectTitle = document.createElement("h3")
+    const projectItem     = document.createElement("div");
+    const projectTitle    = document.createElement("h3")
     const projectSubtitle = document.createElement("span");
 
     projectItem.classList.add("project-item");
@@ -189,45 +188,51 @@ function createProject(index: number) {
     projectItem.appendChild(projectSubtitle);
 
     let hasPreviewed = false;
+    let startX = 0;
+    let startY = 0;
 
     const openLink = () => {
-        if (data[index].link) {
-            window.open(data[index].link, "_blank", "noopener,noreferrer");
-        }
+        if (data[index].link)  window.open(data[index].link, "_blank", "noopener,noreferrer");
     };
 
-    const handleTap = () => {
-        showProject(index);
+    projectItem.addEventListener("pointerdown", (e) => {
+        startX = e.clientX;
+        startY = e.clientY;
+    });
+
+    projectItem.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const diffX = Math.abs(e.clientX - startX);
+        const diffY = Math.abs(e.clientY - startY);
+        if (diffX > 10 || diffY > 10) return;
 
         if (window.innerWidth <= 900) {
-            if (hasPreviewed) {
+            if (activeProjectIndex === index)
                 openLink();
-                hasPreviewed = false;
-            } else {
-                hasPreviewed = true;
+            else {
+                showProject(index);
+                activeProjectIndex = index;
             }
         } else {
+            showProject(index);
             openLink();
         }
-    };
-
-    projectItem.addEventListener("mouseover", () => showProject(index));
-    projectItem.addEventListener("focus", () => showProject(index));
-    projectItem.addEventListener("pointerenter", () => showProject(index));
-    projectItem.addEventListener("click", (event) => {
-        event.preventDefault();
-        handleTap();
     });
-    
+    projectItem.addEventListener("pointerenter", () => {
+        if (window.innerWidth > 900) showProject(index);
+    });
+
     return projectItem;
 }
 
-function showProject(index: number) {
-    // Update Preview Box
+async function showProject(index: number) {
+    const img = new Image();
+    img.src = data[index].img;
+    await img.decode();
     previewTitle.innerText = data[index].title;
     previewSubtitle.innerText = data[index].desc;
-    previewImage.dataset.src = data[index].img;
-    previewImage.style.removeProperty("object-position");
+    previewImage.src = img.src;
     loadPreviewImage(data[index].img);
 }
 
@@ -253,8 +258,6 @@ galleryButtons.forEach((button) => {
     });
 });
 
-updateTeachingImage();
-
 const revealObserver = "IntersectionObserver" in window
     ? new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
@@ -277,30 +280,23 @@ revealElements.forEach((element) => {
     }
 });
 
-if (menuToggle && nav) {
-    menuToggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
+document.querySelectorAll('a[title="home"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        lenis.scrollTo(0);
     });
+});
 
-    navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            nav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-        });
-    });
+// @ts-ignore
+const lenis = new Lenis({
+    duration: 1,
+    lerp: 0.05,
+    wheelMultiplier: 0.8,
+    infinite: false,
+    smoothWheel: true,
+    anchors: true,
+    allowNestedScroll: true,
+    autoRaf: true
+})
 
-    document.addEventListener("click", (event) => {
-        if (window.innerWidth <= 900 && !nav.contains(event.target as Node)) {
-            nav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-        }
-    });
-
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 900) {
-            nav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded", "false");
-        }
-    });
-}
+updateTeachingImage();
