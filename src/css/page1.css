@@ -111,8 +111,8 @@ section h2 {
 }
 .hero img {
   flex: 0 0 auto;
-  width: min(34vw, 600px);
-  max-width: 600px;
+  width: min(34vw, 500px);
+  max-width: 500px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 100%;
@@ -264,6 +264,12 @@ section h2 {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  display: block;
+}
+#p-desc {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
