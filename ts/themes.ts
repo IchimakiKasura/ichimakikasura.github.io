@@ -1,7 +1,11 @@
 const themeToggle = document.querySelector(".theme-toggle") as HTMLButtonElement | null;
 
 const THEME_KEY: string = "portfolio-theme";
+const ANIMATION_MS: number = 300;
+const snapSound:HTMLAudioElement = new Audio();
 let direction: number = 1;
+let isLocked: boolean = false;
+let isAnimationStillPlayLikeOmfg: number | undefined;
 
 interface theme {
     mode: string;
@@ -14,6 +18,15 @@ const themes: theme[] = [
     { mode: "dark",   label: "Dark" },
 ];
 
+snapSound.src = "/audio/snap.wav";
+snapSound.volume = 0.4;
+snapSound.preload = "auto";
+
+function playSnapSound() {
+    snapSound.currentTime = 70 / 1000;
+    snapSound.play().catch();
+}
+
 function setTheme(mode: string) {
     document.documentElement.classList.remove("theme-system", "theme-light", "theme-dark");
     document.documentElement.classList.add(`theme-${mode}`);
@@ -23,8 +36,6 @@ function setTheme(mode: string) {
         const theme = themes.find((theme) => theme.mode === mode) ?? themes[0];
         themeToggle.dataset.theme = theme.mode;
         themeToggle.setAttribute("aria-label", `Toggle color theme, ${theme.label}`);
-        themeToggle.classList.add("theme-animate");
-        window.setTimeout(() => themeToggle.classList.remove("theme-animate"), 350);
     }
 }
 
@@ -36,6 +47,7 @@ function initializeTheme() {
 
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
+        playSnapSound();
         const current      = themeToggle.dataset.theme || "system";
         const currentIndex = themes.findIndex((t) => t.mode === current);
 
@@ -50,6 +62,20 @@ if (themeToggle) {
         }
 
         setTheme(themes[nextIndex].mode);
+
+        if (isAnimationStillPlayLikeOmfg !== undefined)
+            window.clearTimeout(isAnimationStillPlayLikeOmfg);
+
+        const animClass = direction === 1 ? "theme-animate" : "theme-animate-back";
+        themeToggle.classList.remove(animClass);
+        
+        requestAnimationFrame(() => {
+            themeToggle.classList.add(animClass);
+
+            isAnimationStillPlayLikeOmfg = window.setTimeout(() => {
+                themeToggle.classList.remove(animClass);
+            }, ANIMATION_MS);
+        });
     });
 }
 

@@ -13,22 +13,25 @@
 
     "ts:watch": "esbuild ts/*.ts --outdir=src/js --watch --log-level=silent",
 
-    "wrangler:dev": "npx wrangler dev --config wrangler.dev.json --local --remote=false --live-reload",
-    "wrangler:prod": "npx wrangler dev --config wrangler.prod.json --local --remote=false --live-reload",
+    "wrangler:dev": "wrangler dev --config wrangler.dev.json --local --remote=false --live-reload",
+    "wrangler:prod": "wrangler dev --config wrangler.prod.json --local --remote=false --live-reload",
 
-    "test:ts": "npx tsc --noEmit --pretty false --diagnostics --extendedDiagnostics --listFiles --explainFiles --traceResolution 2>&1 | grep -v \"node_modules\"",
+    "test:ts": "tsc --noEmit --pretty false --diagnostics --extendedDiagnostics --listFiles --explainFiles --traceResolution 2>&1 | grep -v \"node_modules\"",
     "test:site": "concurrently --names \"ESBUILD,WRANGLER\" --prefix-colors \"cyan,#FF6600\" \"npm run ts:watch\" \"npm run wrangler:dev\"",
-    "test:prod": "concurrently --names \"STEWJS,WRANGLER\" --prefix-colors \"cyan,#FF6600\" \"npm run build:prod\" \"npm run wrangler:prod\""
+    "test:prod": "concurrently --names \"STEWJS,WRANGLER\" --prefix-colors \"cyan,#FF6600\" \"npm run build:prod\" \"npm run wrangler:prod\"",
+
+    "update:stew": "degit IchimakiKasura/Stew/build ./build --force"
   },
   "devDependencies": {
     "clean-css": "^5.3.3",
     "concurrently": "^10.0.3",
+    "degit": "^3.4.7",
     "dotenv": "^17.4.2",
     "esbuild": "^0.28.1",
     "fs-extra": "^11.3.5",
     "html-minifier-terser": "^7.2.0",
     "terser": "^5.48.0",
     "typescript": "^6.0.3",
-    "wrangler": "^4.106.0"
+    "wrangler": "^4.107.1"
   }
 }

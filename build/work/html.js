@@ -8,8 +8,6 @@ import config from "../config.js";
 const regex = {
     stew: /\s*stew-mod\s*=\s*(["'])[\s\S]*?\1/gi,
     stewMod: /<([a-z0-9]+)([^>]*\bstew-mod\s*=\s*["']\s*([\s\S]*?)\s*["'][^>]*?)(?:\/>|>([\s\S]*?)<\/\1>)/gi,
-    // FIX: Catch all local .css files (even if they start with a folder name or ./ or /)
-    // This regex ignores absolute URLs (http) and data URIs
     linkRemove: /<link[^>]*href=["'](?!(?:https?|data|#):)[^"']+\.css["'][^>]*>\s*/gi,
     linkMinify: /(<link[^>]*href=["'])([^"']+)\.css(["'][^>]*>)/g,
     scriptMinify: /(<script[^>]*src=["'])([^"']+)\.js(["'][^>]*><\/script>)/g,

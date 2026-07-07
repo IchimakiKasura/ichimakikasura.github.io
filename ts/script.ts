@@ -1,3 +1,7 @@
+interface Window {
+    lenis: any;
+}
+
 interface projectData {
     title: string;
     sub: string;
@@ -280,15 +284,8 @@ revealElements.forEach((element) => {
     }
 });
 
-document.querySelectorAll('a[title="home"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        lenis.scrollTo(0);
-    });
-});
-
-// @ts-ignore
-const lenis = new Lenis({
+//@ts-ignore
+window.lenis = new Lenis({
     duration: 1,
     lerp: 0.05,
     wheelMultiplier: 0.8,
@@ -298,5 +295,6 @@ const lenis = new Lenis({
     allowNestedScroll: true,
     autoRaf: true
 })
+
 
 updateTeachingImage();
