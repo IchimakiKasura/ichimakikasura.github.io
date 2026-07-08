@@ -38,7 +38,14 @@ footer > div {
     gap: 0.5rem;
 }
 .footer-left svg {
-    cursor: pointer;;
+    cursor: pointer;
+    transition: transform 0.2s ease, fill 0.2s ease;
+    opacity: 0.8;
+}
+.footer-left svg:hover {
+    transform: translateY(-3px);
+    fill: #ffacac;
+    opacity: 1;
 }
 .footer-right {
     display: inline-flex;

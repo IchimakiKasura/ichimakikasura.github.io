@@ -32,8 +32,8 @@ if (menuToggle && nav) {
     })
 
     document.addEventListener("click", (e) => {
-        e.preventDefault()
         if (window.innerWidth <= 900 && !nav.contains(e.target as Node)) {
+            e.preventDefault();
             nav.classList.remove("open");
             menuToggle.setAttribute("aria-expanded", "false");
         }

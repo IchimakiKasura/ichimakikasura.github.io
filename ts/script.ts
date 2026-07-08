@@ -6,7 +6,7 @@ interface projectData {
     link?: string;
 }
 
-const data: projectData[] = [
+const data: projectData[] = [   
     {
         title: "⭐ Stew",
         sub: "Build Tool | Node.js",
@@ -160,7 +160,7 @@ function loadPreviewImage(src: string) {
 const SOCIAL_LINKS: Record<string, string> = {
     dc: "https://discord.com/users/1515722036209520940",
     gh: "https://github.com/IchimakiKasura",
-    gm: "malto:ichimakikasura@gmail.com"
+    gm: "mailto:ichimakikasura@gmail.com"
 };
 
 document.querySelectorAll<HTMLElement>("[data-social]").forEach((btn) => {

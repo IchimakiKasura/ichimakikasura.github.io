@@ -173,6 +173,10 @@ section h2 {
 .gallery-btn:hover {
   transform: translateY(-2px);
 }
+.skelz {
+  text-align: center;
+  padding-top: 10px;
+}
 .lower {
   margin-top: 20px;
   color: var(--text-dark-muted);
