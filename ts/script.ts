@@ -1,7 +1,3 @@
-interface Window {
-    lenis: any;
-}
-
 interface projectData {
     title: string;
     sub: string;
@@ -13,7 +9,7 @@ interface projectData {
 const data: projectData[] = [
     {
         title: "⭐ Stew",
-        sub: "Build Tool | Static Site Generator",
+        sub: "Build Tool | Node.js",
         desc: "Purpose-built for developers who value simplicity and control, this template combines raw HTML and CSS with the reliability of type-safe JavaScript. It delivers a clean, modern development experience without the overhead of large frameworks, featuring a streamlined build pipeline, optimized output, and an intuitive project structure. The result is a lightweight foundation that stays true to the web platform while providing the tools needed to build fast, maintainable, and scalable websites.\n\n Made in 2026",
         img: "images/projects/stew.webp",
         link: "https://ichimakikasura.github.io/Stew/"
@@ -191,7 +187,6 @@ function createProject(index: number) {
     projectItem.appendChild(projectTitle);
     projectItem.appendChild(projectSubtitle);
 
-    let hasPreviewed = false;
     let startX = 0;
     let startY = 0;
 
@@ -237,6 +232,7 @@ async function showProject(index: number) {
     previewTitle.innerText = data[index].title;
     previewSubtitle.innerText = data[index].desc;
     previewImage.src = img.src;
+    mainScroll.resize();
     loadPreviewImage(data[index].img);
 }
 
@@ -283,18 +279,5 @@ revealElements.forEach((element) => {
         element.classList.add("is-visible");
     }
 });
-
-//@ts-ignore
-window.lenis = new Lenis({
-    duration: 1,
-    lerp: 0.05,
-    wheelMultiplier: 0.8,
-    infinite: false,
-    smoothWheel: true,
-    anchors: true,
-    allowNestedScroll: true,
-    autoRaf: true
-})
-
 
 updateTeachingImage();

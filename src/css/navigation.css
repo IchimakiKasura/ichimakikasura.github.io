@@ -56,18 +56,46 @@
   display: grid;
   position: relative;
   box-sizing: border-box;
+  width: var(--track-width);
   height: var(--track-height);
   padding: var(--track-padding);
   border: none;
   border-radius: 999px;
   color: white;
-  background: rgba(255, 255, 255, 0.12);
   cursor: pointer;
   align-items: center;
   overflow: hidden;
   outline-offset: 4px;
   z-index: 1;
-  transition: background 0.3s ease,
+
+  background:
+    radial-gradient(1px 1px at 240px 12px, #ffffff 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 250px 26px, #fffdec 100%, transparent 100%),
+    radial-gradient(1px 1px at 260px 10px, #ffcbd5 100%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 270px 22px, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 280px 8px, #fffdec 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 290px 25px, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 300px 11px, #ffcbd5 100%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 310px 27px, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 319px 9px, #fffdec 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 328px 24px, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 336px 12px, #ffcbd5 100%, transparent 100%),
+
+    radial-gradient(1px 1px at 188px 24px, #ffcbd5 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 195px 9px, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 202px 27px, #fffdec 100%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 209px 13px, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 215px 25px, #ffcbd5 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 219px 10px, #ffffff 100%, transparent 100%),
+    
+    linear-gradient(135deg, #ffacac, #da8a95, #674859, #1c1630);
+
+  background-repeat: no-repeat;
+  background-size: 300% 100%;
+  
+  background-position: 0% center; 
+
+  transition: background-position 0.6s cubic-bezier(0.25, 1, 0.5, 1),
               width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
               transform 0.3s ease,
               box-shadow 0.3s ease;
@@ -132,14 +160,14 @@
 }
 
 /* PILL */
-.theme-toggle[data-theme="light"]::before {
-  opacity: 1;
+.theme-toggle[data-theme="light"] {
+  background-position: 0% center;
 }
 .theme-toggle[data-theme="system"] {
-  background: linear-gradient(135deg, #ff4967a6, #334155);
+  background-position: 50% center;
 }
-.theme-toggle[data-theme="dark"]::after {
-  opacity: 1;
+.theme-toggle[data-theme="dark"] {
+  background-position: 100% center;
 }
 /* INSIDE PILL OOGA BOOGA */
 .theme-toggle:not(:hover):not(:focus-visible) .thumb {
@@ -166,7 +194,7 @@
 .theme-toggle[data-theme="system"] .thumb {
   transform: translate(var(--segment-width));
   color: #eef2ff;
-  background: rgba(15, 23, 42, 0.96);
+  background: linear-gradient(135deg,rgb(103, 72, 89, 0.96), rgb(28, 22, 48, 0.96));
 }
 .theme-toggle[data-theme="dark"] .thumb {
   transform: translateX(calc(var(--segment-width) * 2));

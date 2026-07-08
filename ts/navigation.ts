@@ -5,32 +5,42 @@ const navLinks      = document.querySelectorAll(".nav-links a") as NodeListOf<HT
 
 if (menuToggle && nav) {
 
-    menuToggle.addEventListener("click", () => {
+    menuToggle.addEventListener("click", (e) => {
+        e.preventDefault()
         const isOpen = nav.classList.toggle("open");
         menuToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault()
+
             nav.classList.remove("open");
             menuToggle.setAttribute("aria-expanded", "false");
+
+            const targetElement = document.querySelector(link.getAttribute('href') as string);
+
+            mainScroll.scrollTo(targetElement);
         });
     });
     
-    navHome?.addEventListener("click", ()=>{
+    navHome?.addEventListener("click", (e)=>{
+        e.preventDefault()
         nav.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
-        window.lenis.scrollTo(0);
+        mainScroll.scrollTo(0);
     })
 
-    document.addEventListener("click", (event) => {
-        if (window.innerWidth <= 900 && !nav.contains(event.target as Node)) {
+    document.addEventListener("click", (e) => {
+        e.preventDefault()
+        if (window.innerWidth <= 900 && !nav.contains(e.target as Node)) {
             nav.classList.remove("open");
             menuToggle.setAttribute("aria-expanded", "false");
         }
     });
 
-    window.addEventListener("resize", () => {
+    window.addEventListener("resize", (e) => {
+        e.preventDefault()
         if (window.innerWidth > 900) {
             nav.classList.remove("open");
             menuToggle.setAttribute("aria-expanded", "false");

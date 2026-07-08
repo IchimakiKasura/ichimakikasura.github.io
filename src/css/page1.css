@@ -25,6 +25,11 @@ header {
 section > *,
 header > * {
   position: relative;
+
+  /* it exist just to give way to the navbar sht so scrollbar does not blocks it */
+  margin-top: -64px;
+  margin-bottom: 64px;
+
   z-index: 1;
 }
 section {
@@ -35,7 +40,7 @@ header {
 }
 section h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 84px;
 }
 #about {
   background-color: var(--bg-about);
@@ -212,7 +217,7 @@ section h2 {
   padding-bottom: 10px;
 }
 .preview-box {
-  background: var(--bg-footer);
+  background-color: var(--bg-footer);
   border-radius: 15px;
   padding: 20px;
   color: white;
