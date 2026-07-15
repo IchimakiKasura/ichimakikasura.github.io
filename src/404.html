@@ -26,7 +26,8 @@
                 src:  url("/font/UDDigiKyokashoN-R.ttc") format('truetype');
             }
 
-            html.theme-light {
+            :root {
+                color-scheme: light;
                 --bg-color: #ffacac;
                 --bg-nav: #ff5f7a;
                 --bg-footer: #6b4b51;
@@ -41,30 +42,11 @@
                 --text-dark-muted: #2d1b1e85;
                 --error-card: #ffffffbf;
                 --random: white;
-
-            }
-            html.theme-dark {
-                --bg-color: #1c1630;
-                --bg-nav: #3a284d;
-                --bg-footer: #11101b;
-                --bg-about: #32265a88;
-                --bg-projects: #212139cc;
-                --bg-contacts: #2f2963cc;
-                --ctx-bg: #2c224d;
-                --ctx-hover-bg: #53438d;
-                --ctx-hr: #bfa0ff;
-                --text-light: #fdf7ff;
-                --text-dark: #f0ecff;
-                --text-dark-muted: #c9c4ff88;
-                --error-card: #000000bf;
-                --random: black;
-            }
-            html.theme-system {
-                color-scheme: light;
             }
 
             @media (prefers-color-scheme: dark) {
-                html.theme-system {
+                :root {
+                    color-scheme: dark;
                     --bg-color: #1c1630;
                     --bg-nav: #3a284d;
                     --bg-footer: #11101b;
@@ -80,16 +62,51 @@
                     --error-card: #000000bf;
                     --random: black;
                 }
-                html.theme-system {
-                    color-scheme: dark;
-                }
+            }
+
+            html.theme-light {
+                color-scheme: light;
+                --bg-color: #ffacac;
+                --bg-nav: #ff5f7a;
+                --bg-footer: #6b4b51;
+                --bg-about: #b1797980;
+                --bg-projects: #767acb80;
+                --bg-contacts: #3fc2c280;
+                --ctx-bg: #b67c7c;
+                --ctx-hover-bg: #8d5c5c;
+                --ctx-hr: #613e3e;
+                --text-light: #ffffff;
+                --text-dark: #2d1b1e;
+                --text-dark-muted: #2d1b1e85;
+                --error-card: #ffffffbf;
+                --random: white;
+            }
+
+            html.theme-dark {
+                color-scheme: dark;
+                --bg-color: #1c1630;
+                --bg-nav: #3a284d;
+                --bg-footer: #11101b;
+                --bg-about: #32265a88;
+                --bg-projects: #212139cc;
+                --bg-contacts: #2f2963cc;
+                --ctx-bg: #2c224d;
+                --ctx-hover-bg: #53438d;
+                --ctx-hr: #bfa0ff;
+                --text-light: #fdf7ff;
+                --text-dark: #f0ecff;
+                --text-dark-muted: #c9c4ff88;
+                --error-card: #000000bf;
+                --random: black;
             }
 
             body,
             nav, .nav-links
             header,
-            footer,
-            .theme-toggle {
+            footer, 
+            .card, .preview-box,
+            .theme-toggle,
+            ::-webkit-scrollbar, ::-webkit-scrollbar-thumb {
                 transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, opacity 0.5s ease;
             }
 
@@ -117,6 +134,14 @@
                 z-index: -1;
             }
 
+            main {
+                position: absolute;
+                top: 64px;
+                bottom: 0;
+                width: 100%;
+                overflow-y: scroll;
+            }
+
             * {
                 box-sizing: border-box;
                 margin: 0;
@@ -139,21 +164,13 @@
             *::-webkit-scrollbar-thumb:hover {
                 background-color: var(--ctx-hover-bg);
             }
-            *::-webkit-scrollbar-thumb:active {
-                background-color: var(--ctx-hover-bg);
-            }
-            *::-webkit-scrollbar-button {
-                display: none;
-                width: 0;
-                height: 0;
-            }
 
             .error-page {
                 min-height: 100vh;
             }
             .hero {
                 min-height: 100vh;
-                padding: 120px 7% 80px;
+                padding: 0 7% 80px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -286,6 +303,7 @@
                 </button>
             </div>
         </nav>
+
         <main id="main">
             <header class="hero">
                 <div class="error-card reveal">
@@ -299,6 +317,8 @@
                         <a href="/" class="btn btn-primary">Back to Home</a>
                         <a href="/#projects" class="btn btn-secondary">See Projects</a>
                     </div>
+                    
+                    <br/>
 
                     <p class="note reveal" data-delay="0.24">If you were looking for a specific project or older content, the links above will help you get back on track.</p>
                 </div>
