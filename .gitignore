@@ -18,5 +18,4 @@ ts/env.ts
 
 #unused
 api
-.env.examople
 wrangler.json

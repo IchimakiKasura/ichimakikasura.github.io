@@ -1,16 +1,4 @@
 /* Let say root */
-.section-img {
-  z-index: -1;
-  opacity: 1;
-  position: absolute;
-  right: -10vh;
-  height: 100%;
-  top: 5vh;
-  pointer-events: none;
-  -webkit-filtesr: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222);
-  transition: opacity 0.5s ease;
-}
 section,
 header {
   min-height: 100vh;
@@ -21,6 +9,7 @@ header {
   flex-direction: column;
   justify-content: center;
   isolation: isolate;
+  padding: 100px 15% 60px;
 }
 section > *,
 header > * {
@@ -34,9 +23,6 @@ header > * {
 }
 section {
   padding: calc(70px + 64px) 15% 60px;
-}
-header {
-  padding: 100px 15% 60px;
 }
 section h2 {
   font-size: 2.5rem;
@@ -117,6 +103,7 @@ section h2 {
 .about-content {
   max-width: 600px;
   font-size: 1.2rem;
+  flex: 1 1 320px;
 }
 .upper {
   text-align: left;
@@ -124,9 +111,6 @@ section h2 {
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 2rem;
-}
-.about-content {
-  flex: 1 1 320px;
 }
 .teaching {
   flex: 1 1 320px;
@@ -325,7 +309,7 @@ section h2 {
     width: min(100%, 420px);
   }
 
-  .teaching img {
+  .teaching-gallery img {
     width: 100%;
   }
 }

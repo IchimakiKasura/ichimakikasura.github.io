@@ -47,7 +47,6 @@
 }
 
 .theme-toggle {
-  margin-left: auto;
   --track-padding: 4px;
   --track-height: 32px;
   --segment-width: 36px;
@@ -100,7 +99,6 @@
               transform 0.3s ease,
               box-shadow 0.3s ease;
 }
-.theme-toggle::before,
 .theme-toggle::after {
   content: "";
   position: absolute;
@@ -170,9 +168,6 @@
   background-position: 100% center;
 }
 /* INSIDE PILL OOGA BOOGA */
-.theme-toggle:not(:hover):not(:focus-visible) .thumb {
-  transform: translateX(0) !important;
-}
 .theme-toggle .thumb {
   position: absolute;
   left: var(--track-padding);
@@ -225,7 +220,6 @@
 
   .main-nav {
     justify-content: center;
-    position: fixed;
   }
 
   .menu-toggle {
@@ -279,7 +273,6 @@
     text-align: left;
     opacity: 0;
     transform: translateY(-6px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
   .nav-home {
@@ -289,7 +282,6 @@
   }
 
   .theme-toggle {
-    width: var(--track-width);
     touch-action: manipulation;
     margin: 0 10px 0 0;
   }
