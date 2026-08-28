@@ -64,6 +64,13 @@ const data: projectData[] = [
         link: "downloadables/ICTAP.apk"
     },
     {
+        title: "🎮 WPF Game",
+        sub: "Game Development | C#",
+        desc: "Title is just a placeholder.\n\nA game created from scratch with its own Engine from WPF.\n\nWas later abandoned.\n\n Made in 2022",
+        img: "images/projects/wpf-game.webp",
+        link: "https://github.com/IchimakiKasura/WPF-Game"
+    },
+    {
         title: "Erisu-Corner",
         sub: "Web Development",
         desc: "Another web development project to test my ability to design a website. The original website that was made from Wordpress and even the facebook page is no longer exist. This site will stay forever as my learning progress :>\n\n Made in 2021",
@@ -85,9 +92,9 @@ const data: projectData[] = [
         link: "https://ichimakikasura.github.io/ICT/UCSP"
     },
     {
-        title: "kasu.nhentaiapi.js",
+        title: "🪦 kasu.nhentaiapi.js",
         sub: "API Wrapper, Web Scraper | Node.js",
-        desc: "A Node.js API wrapper that simplifies interaction with nhentai by providing an easy-to-use interface for users.\n\n Made in 2021",
+        desc: "A Node.js API wrapper that simplifies interaction with nhentai by providing an easy-to-use interface for users.\n\nIt was also my very first project to be uploaded on the internet.\n\n Made in 2021",
         img: "images/projects/kasunhentai.webp",
         link: "https://github.com/IchimakiKasura/kasu.nhentaiapi.js"
     },
@@ -99,14 +106,14 @@ const data: projectData[] = [
         link: "https://github.com/IchimakiKasura/sosharumedia"
     },
     {
-        title: "Boxy Quest",
+        title: "🎮 Boxy Quest",
         sub: "Game Development | Unity3D",
         desc: "A 2D adventure game featuring exploration, platforming, and puzzle-solving mechanics built as a personal game development project.\n\n Made in 2019",
         img: "images/projects/boxy.webp",
         link: "https://razinedge.itch.io/bqd"
     },
     {
-        title: "3D Tank Trouble",
+        title: "🎮 3D Tank Trouble",
         sub: "Game Development | Unity3D",
         desc: "3D Tank Trouble Beta 3 is a stylized 3D action prototype heavily influenced by the TankTrouble maze-combat formula, retaining the signature top-down playstyle while modernizing the visual environment. The project preserves the core strategic loop of navigating structured mazes and utilizing bouncing projectiles to eliminate opponents, though it does not aim for a 1:1 functional replica of the original game's mechanics. Developed as a standalone desktop experience, the game leverages 3D environmental physics to enhance spatial awareness and trick-shot calculations within its narrow corridors.\n\n Made in 2017",
         img: "images/projects/3dtank.webp",
